@@ -32,7 +32,7 @@ $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
-$global-font-family: "Pretendard", sans-serif !default; // Toss 스타일 폰트
+$global-font-family: "Pretendard", sans-serif !default;
 $header-font-family: "Pretendard", sans-serif !default;
 $caption-font-family: $serif !default;
 
@@ -55,7 +55,7 @@ $h-size-5: 1.03125em !default; // ~16.5px
 $h-size-6: 1em !default; // ~16px
 
 /*
-   Colors (Toss Tech 스타일 적용)
+   Colors
    ========================================================================== */
 
 $gray: #7a8288 !default;
@@ -64,24 +64,22 @@ $darker-gray: mix(#000, $gray, 60%) !default;
 $light-gray: mix(#fff, $gray, 50%) !default;
 $lighter-gray: mix(#fff, $gray, 90%) !default;
 
-$background-color: #f9fafb !default;  // Toss 스타일 배경색
+$background-color: #fff !default;
 $code-background-color: #fafafa !default;
 $code-background-color-dark: $light-gray !default;
-$text-color: #1e1e1e !default;  // Toss 스타일 텍스트 색상
+$text-color: $dark-gray !default;
 $muted-text-color: mix(#fff, $text-color, 20%) !default;
 $border-color: $lighter-gray !default;
 $form-background-color: $lighter-gray !default;
 $footer-background-color: $lighter-gray !default;
 
-/* Primary Colors */
-$primary-color: #3182f6 !default;  // Toss 블루
+$primary-color: #3182f6 !default;  
+$text-color: #1e1e1e !default;  
+$background-color: #f9fafb !default; 
 $danger-color: #ee5f5b !default;
 $info-color: #3b9cba !default;
 $focus-color: $primary-color !default;
 $active-color: mix(#fff, $primary-color, 80%) !default;
-
-/* 추가: Toss Tech 스타일 경고 색상 */
-$warning-color: #d67f05 !default; // 주황색 경고 색상
 
 /* YIQ color contrast */
 $yiq-contrasted-dark-default: $dark-gray !default;
@@ -89,7 +87,7 @@ $yiq-contrasted-light-default: #fff !default;
 $yiq-contrasted-threshold: 175 !default;
 $yiq-debug: false !default;
 
-/* 브랜드 색상 */
+/* brands */
 $behance-color: #1769ff !default;
 $bitbucket-color: #205081 !default;
 $dribbble-color: #ea4c89 !default;
@@ -146,9 +144,33 @@ $base0e: #c792ea !default;
 $base0f: #ff5370 !default;
 
 /*
-   기타 설정
+   Breakpoints
    ========================================================================== */
 
-$border-radius: 8px !default; // Toss 스타일 둥근 모서리
-$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !default;
-$global-transition: all 0.3s ease-in-out !default;
+$small: 600px !default;
+$medium: 768px !default;
+$medium-wide: 900px !default;
+$large: 1024px !default;
+$x-large: 1280px !default;
+$max-width: $x-large !default;
+
+/*
+   Grid
+   ========================================================================== */
+
+$right-sidebar-width-narrow: 200px !default;
+$right-sidebar-width: 300px !default;
+$right-sidebar-width-wide: 400px !default;
+
+/*
+   Other
+   ========================================================================== */
+
+$border-radius: 4px !default;
+$box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125) !default;
+$nav-height: 2em !default;
+$nav-toggle-height: 2rem !default;
+$navicon-width: 1.5rem !default;
+$navicon-height: 0.25rem !default;
+$global-transition: all 0.2s ease-in-out !default;
+$intro-transition: intro 0.3s both !default;
