@@ -1,15 +1,15 @@
 /* Copyright comment */
 @import "minimal-mistakes/copyright";
 
-/* Variables (변수를 가장 먼저 불러오기) */
+/* Variables */
 @import "minimal-mistakes/variables";
 
 /* Mixins and functions */
-@import "minimal-mistakes/mixins";
 @import "minimal-mistakes/vendor/breakpoint/breakpoint";
 @include breakpoint-set("to ems", true);
 @import "minimal-mistakes/vendor/magnific-popup/magnific-popup"; // Magnific Popup
 @import "minimal-mistakes/vendor/susy/susy";
+@import "minimal-mistakes/mixins";
 
 /* Core CSS */
 @import "minimal-mistakes/reset";
@@ -35,6 +35,3 @@
 @import "minimal-mistakes/archive";
 @import "minimal-mistakes/sidebar";
 @import "minimal-mistakes/print";
-
-/* Custom Styles (마지막에 추가) */
-@import "minimal-mistakes/custom";
