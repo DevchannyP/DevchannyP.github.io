@@ -1,78 +1,84 @@
 /* ==========================================================================
-   BUTTONS
-   ========================================================================== */
-
-/*
-   Default button
+   BUTTONS (Toss Tech Style)
    ========================================================================== */
 
 .btn {
-  /* default */
+  /* 기본 버튼 스타일 */
   display: inline-block;
   margin-bottom: 0.25em;
-  padding: 0.5em 1em;
+  padding: 12px 20px; /* Toss Tech 스타일: 넉넉한 패딩 */
   font-family: $sans-serif;
-  font-size: $type-size-6;
-  font-weight: bold;
+  font-size: 16px; /* Toss Tech 스타일 */
+  font-weight: 600; /* Toss Tech 스타일 */
   text-align: center;
   text-decoration: none;
-  border-width: 0;
-  border-radius: $border-radius;
+  border: none;
+  border-radius: 8px; /* 둥근 모서리 적용 */
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* 부드러운 애니메이션 */
 
   .icon {
     margin-inline-end: 0.5em;
   }
 
   .icon + .hidden {
-    margin-inline-start: -0.5em; /* override for hidden text*/
+    margin-inline-start: -0.5em;
   }
 
-  /* button colors */
+  /* 버튼 색상 */
   $buttoncolors:
-  (primary, $primary-color),
+  (primary, #3182f6),   /* Toss 블루 */
   (inverse, #fff),
   (light-outline, transparent),
-  (success, $success-color),
-  (warning, $warning-color),
-  (danger, $danger-color),
-  (info, $info-color),
-  (facebook, $facebook-color),
-  (twitter, $twitter-color),
-  (linkedin, $linkedin-color),
-  (mastodon, $mastodon-color);
+  (success, #28a745),
+  (warning, #ffc107),
+  (danger, #dc3545),
+  (info, #17a2b8),
+  (facebook, #3b5998),
+  (twitter, #1da1f2),
+  (linkedin, #0077b5),
+  (mastodon, #6364ff);
 
   @each $buttoncolor, $color in $buttoncolors {
     &--#{$buttoncolor} {
-      @include yiq-contrasted($color);
+      background-color: $color;
+      color: white;
+      border-radius: 8px; /* Toss 스타일 */
+
       @if ($buttoncolor == inverse) {
         border: 1px solid $border-color;
+        color: #333;
       }
       @if ($buttoncolor == light-outline) {
         border: 1px solid #fff;
       }
 
       &:visited {
-        @include yiq-contrasted($color);
+        background-color: $color;
+        color: white;
       }
 
       &:hover {
-        @include yiq-contrasted(mix(#000, $color, 20%));
+        background-color: darken($color, 10%); /* Hover 시 색상 변경 */
+        transform: translateY(-2px); /* Hover 시 살짝 위로 */
+      }
+
+      &:active {
+        transform: scale(0.98); /* 클릭 시 버튼이 살짝 눌리는 효과 */
       }
     }
   }
 
-  /* fills width of parent container */
+  /* 버튼이 부모 컨테이너 전체 너비 차지 */
   &--block {
     display: block;
     width: 100%;
-
     + .btn--block {
       margin-top: 0.25em;
     }
   }
 
-  /* disabled */
+  /* 비활성화된 버튼 스타일 */
   &--disabled {
     pointer-events: none;
     cursor: not-allowed;
@@ -81,18 +87,19 @@
     opacity: 0.65;
   }
 
-  /* extra large button */
+  /* 버튼 크기 조정 */
   &--x-large {
-    font-size: $type-size-4;
+    font-size: 18px;
+    padding: 14px 24px;
   }
 
-  /* large button */
   &--large {
-    font-size: $type-size-5;
+    font-size: 16px;
+    padding: 12px 20px;
   }
 
-  /* small button */
   &--small {
-    font-size: $type-size-7;
+    font-size: 14px;
+    padding: 8px 16px;
   }
 }
