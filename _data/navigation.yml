@@ -6,6 +6,8 @@ main:
     url: /categories/
   - title: "Jekyll 관련 글"
     url: /categories/jekyll/
+  - title: "Java 관련 글"
+    url: /categories/Java/
   - title: "블로그"
     url: /blog/
   - title: "Quick-Start Guide"
