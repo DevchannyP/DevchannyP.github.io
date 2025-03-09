@@ -20,7 +20,7 @@
 
 /* Components */
 @import "minimal-mistakes/buttons";
-@import "minimal-mistakes/notices";
+@import "minimal-mistakes/notices";  // `$warning-color` 사용될 가능성 있음
 @import "minimal-mistakes/masthead";
 @import "minimal-mistakes/navigation";
 @import "minimal-mistakes/footer";
