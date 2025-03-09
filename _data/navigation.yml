@@ -2,6 +2,12 @@
 main:
   - title: "홈"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "카테고리"
+    url: /categories/
+  - title: "태그"
+    url: /tags/
+  - title: "블로그"
+    url: /blog/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
