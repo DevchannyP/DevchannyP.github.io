@@ -1,33 +1,10 @@
-@import "minimal-mistakes/variables"; // 변수를 먼저 로드
+@import "minimal-mistakes/variables"; // 변수를 가장 먼저 로드
 
 /* Toss Tech 스타일 적용 */
 body {
-    background-color: $background-color;
-    font-family: $global-font-family;
-    color: $text-color;
-}
-
-/* 전체 페이지 너비 조정 */
-.site-container {
-    max-width: 1200px; /* Toss Tech처럼 넓게 조정 */
-    margin: 0 auto; /* 화면 중앙 정렬 */
-    padding: 0 20px;
-}
-
-/* 본문 컨텐츠를 좀 더 넓게 조정 */
-.site-content {
-    width: 100%;
-    max-width: 100%;
-    padding: 40px 0;
-}
-
-/* 헤더와 푸터를 넓게 표시 */
-.site-header,
-.site-footer {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    background-color: #f9fafb;
+    font-family: "Pretendard", sans-serif;
+    color: #1e1e1e;
 }
 
 /* 카드 스타일 적용 – Toss Tech처럼 깔끔한 목록 */
@@ -42,4 +19,14 @@ body {
 /* 마우스 오버 시 카드 효과 */
 .card:hover {
     transform: translateY(-3px);
+}
+
+/* 버튼 스타일 – Toss Tech 스타일 적용 */
+.btn {
+    background-color: #3182f6;
+    color: white;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
 }
