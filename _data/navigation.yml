@@ -1,18 +1,12 @@
 # main links
 main:
   - title: "홈"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+    url: /
   - title: "카테고리"
     url: /categories/
-  - title: "태그"
-    url: /tags/
+  - title: "Jekyll 관련 글"
+    url: /categories/jekyll/
   - title: "블로그"
     url: /blog/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Quick-Start Guide"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
