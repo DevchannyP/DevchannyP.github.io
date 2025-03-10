@@ -234,7 +234,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Pagination with jekyll-paginate
-paginate: 5 # amount of posts to show
+paginate: 7 # amount of posts to show
 paginate_path: /page:num/
 
 # Pagination with jekyll-paginate-v2
@@ -295,10 +295,7 @@ tag_archive:
   collections:
   categories:
     output: true
-    permalink: /categories/:Java/
-  categories:
-    output: true
-    permalink: /categories/:Sql/
+    permalink: /categories/:name/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
