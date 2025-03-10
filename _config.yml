@@ -20,7 +20,7 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : "DevChannyP 기술 블로그"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "DevChannyP"
 description              : "학습에 집착하는 블로그"
 url                      : "https://DevchannyP.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -230,7 +230,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Pagination with jekyll-paginate
@@ -286,6 +286,11 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
+
+collections:
+  categories:
+    output: true
+    permalink: /categories/:name/
 category_archive:
   type: liquid
   path: /categories/
@@ -293,9 +298,7 @@ tag_archive:
   type: liquid
   path: /tags/
   collections:
-  categories:
-    output: true
-    permalink: /categories/:name/
+
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
