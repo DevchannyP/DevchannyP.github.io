@@ -1,7 +1,7 @@
 # main links
 main:
-#  - title: "홈"
-#    url: "/"
+  - title: "홈"
+    url: "/"
   - title: "홈"
     url: "/categories/"
   - title: "Java"
