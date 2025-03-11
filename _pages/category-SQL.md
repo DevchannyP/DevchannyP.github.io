@@ -2,6 +2,7 @@
 layout: archive
 title: "SQL"
 permalink: /categories/sql/
+category: sql
 author_profile: true
 ---
 
