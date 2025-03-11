@@ -284,16 +284,20 @@ whitelist:
 #  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
 #  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
 
+category_archive:
+  type: "layout"
+  path: "/categories/"
+
 jekyll-archives:
   enabled:
     - categories
     - tags
   layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
+    category: category
+    tag: tag
   permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+    category: /categories/:name/index.html  # URL 충돌 방지
+    tag: /tags/:name/index.html  # URL 충돌 방지
 #  Path (examples)
 #  - Archive page should exist at path when using Liquid method or you can
 #    expect broken links (especially with breadcrumbs enabled)
