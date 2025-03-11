@@ -2,6 +2,7 @@
 layout: archive
 title: "JAVA"
 permalink: /categories/java/
+category: sql
 author_profile: true
 ---
 
