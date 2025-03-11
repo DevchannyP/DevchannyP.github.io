@@ -1,12 +1,12 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "홈"
+    url: DevchannyP.github.io/
+  - title: "Java"
+    url: DevchannyP.github.io/java/
+  - title: "SQL"
+    url: DevchannyP.github.io/sql/
+  - title: "CSS"
+    url: DevchannyP.github.io/css/
+  - title: "IoT"
+    url: DevchannyP.github.io/iot/
