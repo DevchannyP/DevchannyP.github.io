@@ -2,6 +2,7 @@
 layout: archive
 title: "CSS"
 permalink: /categories/css/
+category: css
 author_profile: true
 ---
 
