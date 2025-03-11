@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "프로그래밍"
+title: "SQL"
 permalink: /categories/sql/
 author_profile: true
 ---
