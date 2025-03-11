@@ -304,7 +304,7 @@ tag_archive:
   path: /tags/
 
 
- https://github.com/jekyll/jekyll-archives
+ # https://github.com/jekyll/jekyll-archives
  jekyll-archives:
    enabled:
      - categories
@@ -315,11 +315,6 @@ tag_archive:
    permalinks:
      category: /categories/:name/
      tag: /tags/:name/
-
-category_archive:
-  type: "layout"
-  path: "/categories/"
-
 
 
 
