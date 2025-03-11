@@ -24,7 +24,7 @@ name                     : "DevChannyP"
 description              : "학습에 집착하는 블로그"
 url                      : "https://DevchannyP.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "DevChannyP/DevChannyP.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/logo.png" #  path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : " "# overrides the website title displayed in the masthead, use " " for no title
@@ -284,20 +284,7 @@ whitelist:
 #  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
 #  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
 
-category_archive:
-  type: "layout"
-  path: "/categories/"
 
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    category: /categories/:name/index.html  # URL 충돌 방지
-    tag: /tags/:name/index.html  # URL 충돌 방지
 #  Path (examples)
 #  - Archive page should exist at path when using Liquid method or you can
 #    expect broken links (especially with breadcrumbs enabled)
@@ -317,17 +304,23 @@ tag_archive:
   path: /tags/
 
 
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
+ https://github.com/jekyll/jekyll-archives
+ jekyll-archives:
+   enabled:
+     - categories
+     - tags
+   layouts:
+     category: archive-taxonomy
+     tag: archive-taxonomy
+   permalinks:
+     category: /categories/:name/
+     tag: /tags/:name/
+
+category_archive:
+  type: "layout"
+  path: "/categories/"
+
+
 
 
 # HTML Compression
