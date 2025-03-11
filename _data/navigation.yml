@@ -5,8 +5,8 @@ main:
   - title: "Java"
     url: "/categories/java/"
   - title: "SQL"
-    url: DevchannyP.github.io/sql/
+    url: "/categories/sql/"
   - title: "CSS"
-    url: DevchannyP.github.io/css/
+    url: "/categories/css/"
   - title: "IoT"
-    url: DevchannyP.github.io/iot/
+    url: "/categories/iot/"
