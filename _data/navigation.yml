@@ -1,9 +1,9 @@
 # main links
 main:
   - title: "홈"
-    url: DevchannyP.github.io/
+    url: "/"
   - title: "Java"
-    url: DevchannyP.github.io/java/
+    url: "/categories/java/"
   - title: "SQL"
     url: DevchannyP.github.io/sql/
   - title: "CSS"
