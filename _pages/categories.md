@@ -1,7 +1,8 @@
 ---
-title: "카테고리"
+title: "Posts by Category"
 layout: categories
 permalink: /categories/
+taxonomy: category
 author_profile: true
 ---
 
