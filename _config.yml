@@ -305,16 +305,21 @@ tag_archive:
 
 
  # https://github.com/jekyll/jekyll-archives
- jekyll-archives:
-   enabled:
-     - categories
-     - tags
-   layouts:
-     category: archive-taxonomy
-     tag: archive-taxonomy
-   permalinks:
-     category: /categories/:name/
-     tag: /tags/:name/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    category: /categories/:name/index.html
+    tag: /tags/:name/index.html
+
+category_archive:
+  type: "layout"
+  path: "/categories/"
+
 
 
 
