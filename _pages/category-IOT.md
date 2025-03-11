@@ -2,6 +2,7 @@
 layout: archive
 title: "IOT"
 permalink: /categories/iot/
+category: iot
 author_profile: true
 ---
 
