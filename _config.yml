@@ -308,7 +308,7 @@ jekyll-archives:
 collections:
   categories:
     output: true
-    permalink: /categories/:name/
+    permalink: /categories/:title/
 category_archive:
   type: "archive"
   path: "/categories/"
