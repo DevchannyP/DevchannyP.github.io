@@ -26,7 +26,8 @@ url                      : "https://DevchannyP.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/images/logo.png" #  path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+# logo                     : "/assets/images/logo.png" #  path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo : "https://drive.google.com/file/d/1h2cv4e3QBLf9yXiUfsG6jv7c1CJLovC2/view?usp=drive_link"
 masthead_title           : " "# overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
