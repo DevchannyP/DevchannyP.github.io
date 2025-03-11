@@ -306,8 +306,8 @@ collections:
     output: true
     permalink: /categories/:name/
 category_archive:
-  type: layout
-  path: /categories/
+  type: "layout"
+  path: "/categories/"
 tag_archive:
   type: liquid
   path: /tags/
