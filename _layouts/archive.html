@@ -22,5 +22,21 @@ layout: default
       <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
     {% endunless %}
     {{ content }}
+
+    <!-- ✅ 추가된 부분: 카테고리별 포스트 리스트 -->
+    {% if site.categories[page.category] %}
+      <ul class="post-list">
+        {% for post in site.categories[page.category] %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>이 카테고리에 포스트가 없습니다.</p>
+    {% endif %}
+    <!-- ✅ 추가된 부분 끝 -->
+    
   </div>
 </div>
