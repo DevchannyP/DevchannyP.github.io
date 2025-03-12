@@ -1,9 +1,8 @@
 ---
 layout: category
 title: "CSS"
-permalink: /categories/css/
 category: css
-author_profile: true
+permalink: /categories/css/
 ---
 
 <ul>
