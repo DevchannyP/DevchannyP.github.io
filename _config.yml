@@ -292,16 +292,17 @@ whitelist:
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
 
-collections:
-  categories:
-    output: true
-    permalink: /categories/:title/
-category_archive:
-  type: "archive"
-  path: "/categories/"
-tag_archive:
-  type: liquid
-  path: /tags/
+# 주석처리 충돌방지
+# collections:
+#  categories:
+ #   output: true
+ #   permalink: /categories/:title/
+#category_archive:
+#  type: "archive"
+#  path: "/categories/"
+# tag_archive:
+#  type: liquid
+#  path: /tags/
 
 
  # https://github.com/jekyll/jekyll-archives
@@ -313,12 +314,17 @@ jekyll-archives:
     category: category
     tag: tag
   permalinks:
-    category: /categories/:name/index.html
-    tag: /tags/:name/index.html
+    category: /categories/:name/
+    tag: /tags/:name/
 
-category_archive:
-  type: "layout"
-  path: "/categories/"
+ #     permalinks:
+  #  category: /categories/:name/index.html
+   # tag: /tags/:name/index.html
+
+# 주석처리 충돌방지
+#category_archive:
+#  type: "layout"
+#  path: "/categories/"
 
 
 
