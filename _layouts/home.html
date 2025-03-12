@@ -15,7 +15,7 @@ layout: archive
 </div>
 
 <!-- 카테고리별 게시물 -->
-<h2>카테고리별 게시물</h2>
+<h2>카테고리별 최근 게시물</h2>
 
 {% for category in site.categories %}
   {% assign posts = category[1] %}
@@ -27,7 +27,7 @@ layout: archive
     </h3>
 
     <div class="entries-list">
-      {% for post in posts limit: 5 %}
+      {% for post in posts limit: 2 %}  <!-- 카테고리별 최대 2개만 표시 -->
         {% include archive-single.html %}
       {% endfor %}
     </div>
