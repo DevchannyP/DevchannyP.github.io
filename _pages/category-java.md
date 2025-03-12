@@ -1,9 +1,8 @@
 ---
 layout: archive
 title: "JAVA"
-permalink: /categories/java/
 category: java
-author_profile: true
+permalink: /categories/java/
 ---
 
 <ul>
