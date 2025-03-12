@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: category
 title: "CSS"
 permalink: /categories/css/
 category: css
