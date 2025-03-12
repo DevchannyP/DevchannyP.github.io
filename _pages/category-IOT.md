@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: category
 title: "IOT"
 permalink: /categories/iot/
 category: iot
