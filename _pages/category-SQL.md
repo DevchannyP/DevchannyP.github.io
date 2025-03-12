@@ -1,8 +1,7 @@
 ---
-layout: archive
+layout: category
 title: "SQL"
 permalink: /categories/sql/
-category: sql
 author_profile: true
 ---
 
