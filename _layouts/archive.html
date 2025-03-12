@@ -23,23 +23,21 @@ layout: default
         {{ page.title }}
       </h1>
     {% endunless %}
-    
+
     {{ content }}
 
-    <!-- 🔥 카테고리별 그룹화 적용 -->
     <h2>카테고리별 게시물</h2>
 
     {% for category in site.categories %}
-      <h3 class="archive__subtitle">{{ category[0] }}</h3>  <!-- 카테고리 제목 출력 -->
-
       {% assign posts = category[1] %}
-      {% assign entries_layout = page.entries_layout | default: 'list' %}
-      <div class="entries-{{ entries_layout }}">
-        {% include documents-collection.html entries=posts type=entries_layout %}
-      </div>
-    {% endfor %}
+      {% if posts.size > 0 %}
+        <h3 class="archive__subtitle">{{ category[0] }}</h3>  <!-- 카테고리 이름 출력 -->
 
+        {% assign entries_layout = page.entries_layout | default: 'list' %}
+        <div class="entries-{{ entries_layout }}">
+          {% include documents-collection.html entries=posts type=entries_layout %}
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
-
-{% include paginator.html %}
