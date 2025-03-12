@@ -1,19 +1,42 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
 
-{% assign category_name = page.name | default: page.title | slugify %}
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
 
-<h1>{{ page.title }}</h1>
+<div id="main" role="main">
+  {% include sidebar.html %}
 
-<div class="entries-list">
-  {% for post in site.categories[category_name] %}
-    <article>
-      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt }}</p>
-      <p><small>{{ post.date | date: "%Y-%m-%d" }}</small></p>
-    </article>
-  {% endfor %}
+  <div class="archive">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>
+        {{ page.title }}
+      </h1>
+    {% endunless %}
+
+    {{ content }}
+
+    {% assign category_name = page.category %}
+    <h2>{{ category_name }} 카테고리 게시물</h2>
+
+    {% assign posts = site.categories[category_name] %}
+    {% if posts.size > 0 %}
+      {% assign entries_layout = page.entries_layout | default: 'list' %}
+      <div class="entries-{{ entries_layout }}">
+        {% include documents-collection.html entries=posts type=entries_layout %}
+      </div>
+    {% else %}
+      <p>이 카테고리에는 게시물이 없습니다.</p>
+    {% endif %}
+  </div>
 </div>
