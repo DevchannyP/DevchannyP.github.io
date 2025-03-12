@@ -1,9 +1,8 @@
 ---
 layout: category
 title: "IOT"
-permalink: /categories/iot/
 category: iot
-author_profile: true
+permalink: /categories/iot/
 ---
 
 {% for post in site.categories.programming %}
