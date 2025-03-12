@@ -7,18 +7,18 @@ layout: archive
 <!-- 최근 포스트 -->
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
-{% assign recent_posts = site.posts | where_exp: "post", "post.categories != empty" | limit: 5 %}
+{% assign recent_posts = site.posts | where_exp: "post", "post.categories != empty" | uniq | limit: 5 %}
 <div class="entries-list">
   {% for post in recent_posts %}
-    {% include archive-single.html %}
+    {% include archive-single.html post=post %}
   {% endfor %}
 </div>
 
-<!-- 카테고리별 게시물 -->
+<!-- 카테고리별 최근 게시물 -->
 <h2>카테고리별 최근 게시물</h2>
 
 {% for category in site.categories %}
-  {% assign posts = category[1] %}
+  {% assign posts = category[1] | uniq %}  <!-- 중복 제거 -->
   {% if posts.size > 0 %}
     <h3 class="archive__subtitle">
       <a href="{{ site.baseurl }}/categories/{{ category[0] }}/">
@@ -27,8 +27,10 @@ layout: archive
     </h3>
 
     <div class="entries-list">
-      {% for post in posts limit: 2 %}  <!-- 카테고리별 최대 2개만 표시 -->
-        {% include archive-single.html %}
+      {% for post in posts limit: 2 %}
+        {% if post.categories contains category[0] %}
+          {% include archive-single.html post=post %}
+        {% endif %}
       {% endfor %}
     </div>
   {% endif %}
