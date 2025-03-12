@@ -1,8 +1,8 @@
 ---
 layout: category
 title: "SQL"
+category : sql
 permalink: /categories/sql/
-author_profile: true
 ---
 
 <ul>
