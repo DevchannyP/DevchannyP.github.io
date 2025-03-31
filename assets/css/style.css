@@ -286,3 +286,37 @@ aside li::before {
   border-radius: 12px;
   display: block;
 }
+
+.post h1, .post h2, .post h3 {
+  font-weight: bold;
+  margin: 1.5em 0 0.5em;
+}
+
+.post p {
+  font-size: 16px;
+  margin-bottom: 1em;
+  line-height: 1.7;
+  color: #333;
+}
+
+.post ul, .post ol {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.post pre {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.post code {
+  background-color: #f4f4f4;
+  color: #c7254e;
+  font-family: 'Courier New', monospace;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
