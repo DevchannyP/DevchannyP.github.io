@@ -14,6 +14,10 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+  collections:
+  posts:
+    output: true
+
 social:
   name: DevchannyP
   github: DevchannyP
