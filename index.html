@@ -1,32 +1,45 @@
 ---
 layout: default
-title: Devchanny Blog
+title: Devchanny 기술 블로그
 ---
 
-<div class="main-grid container">
-  <!-- Left: Posts -->
-  <div class="articles">
-    {% for post in site.posts %}
-      {% include archive-single.html post=post %}
-    {% endfor %}
-  </div>
+<section class="hero-banner">
+  <img src="/assets/img/banner.png" alt="banner">
+</section>
 
-  <!-- Right: Sidebar -->
-  <aside class="sidebar">
-    <section>
-      <h4>인기있는 글</h4>
-      <ul>
-        <li>토스 피플: 이것도 ‘나니까’ 할 수 있다고 생각하기</li>
-        <li>React Native에서 타입 안전한 파일 기반 라우팅 구현하기</li>
-        <li>자료구조를 활용한 복잡한 프론트엔드 컴포넌트 제작하기</li>
-      </ul>
-    </section>
-    <section>
-      <h4>최근 댓글</h4>
-      <ul>
-        <li>🟡 활기찬늑대: 잘 읽었습니다!</li>
-        <li>🟣 다정한곰: 잘보고 가요~</li>
-      </ul>
-    </section>
-  </aside>
+<div class="tabs">
+  <button class="active">전체</button>
+  <button>WEB</button>
+  <button>SQL</button>
+  <button>JAVA</button>
+  <button>API</button>
 </div>
+
+<main class="main-grid">
+  <section class="articles">
+    {% for post in site.posts %}
+      <div class="card">
+        <div class="card-thumbnail" style="background-image: url('{{ post.thumbnail | default: '/assets/img/default.png' }}')"></div>
+        <div class="card-content">
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt | strip_html | truncate: 80 }}</p>
+          <div class="card-meta">{{ post.date | date: "%Y년 %m월 %d일" }} · {{ post.author }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+
+  <aside class="sidebar">
+    <h3>인기있는 글</h3>
+    <ul>
+      <li>토스 피플: 이것도 ‘나니까’ 할 수 있다고 생각하기</li>
+      <li>React Native에서 타입 안전한 파일 기반 라우팅 구현하기</li>
+      <li>자료구조를 활용한 복잡한 프론트엔드 컴포넌트 제작하기</li>
+    </ul>
+    <h3>최근 댓글</h3>
+    <ul>
+      <li>🟣 씩씩한치타: 잘 읽었습니다!</li>
+      <li>🟡 활기찬늑대: 잘보고 가요~</li>
+    </ul>
+  </aside>
+</main>
