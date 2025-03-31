@@ -21,7 +21,7 @@ social:
   linkedin: devchanny
 
 exclude: ["README.md", "Gemfile", "Gemfile.lock", "node_modules", "vendor"]
-permalink: /:categories/:year/:month/:day/:title.html
+permalink: /:categories/:title/
 
 defaults:
   - scope:
