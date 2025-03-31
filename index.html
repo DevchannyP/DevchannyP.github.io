@@ -9,17 +9,17 @@ title: Devchanny 기술 블로그
 </section>
 
 <div class="tabs">
-  <button class="active">전체</button>
-  <button>WEB</button>
-  <button>SQL</button>
-  <button>JAVA</button>
-  <button>API</button>
+  <button class="tab-btn active" data-category="all">전체</button>
+  <button class="tab-btn" data-category="web">WEB</button>
+  <button class="tab-btn" data-category="sql">SQL</button>
+  <button class="tab-btn" data-category="java">JAVA</button>
+  <button class="tab-btn" data-category="api">API</button>
 </div>
 
 <main class="main-grid">
   <section class="articles">
     {% for post in site.posts %}
-      <div class="card">
+      <div class="card post-card" data-category="{{ post.categories | join: ' ' }}">
         <div class="card-thumbnail" style="background-image: url('{{ post.thumbnail | default: '/assets/img/default.png' }}')"></div>
         <div class="card-content">
           <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -30,16 +30,40 @@ title: Devchanny 기술 블로그
     {% endfor %}
   </section>
 
- <aside class="sidebar">
-  <h3>인기있는 글</h3>
-  <ul id="popular-posts">
-    <!-- 여기서 JS로 렌더링됨 -->
-  </ul>
+  <aside class="sidebar">
+    <h3>인기있는 글</h3>
+    <ul id="popular-posts">
+      <!-- 여기서 JS로 렌더링됨 -->
+    </ul>
 
-  <h3>최근 댓글</h3>
-  <ul>
-    <li>🟣 씩씩한치타: 잘 읽었습니다!</li>
-    <li>🟡 활기찬늑대: 잘보고 가요~</li>
-  </ul>
-</aside>
+    <h3>최근 댓글</h3>
+    <ul>
+      <li>🟣 씩씩한치타: 잘 읽었습니다!</li>
+      <li>🟡 활기찬늑대: 잘보고 가요~</li>
+    </ul>
+  </aside>
+</main>
 
+<script>
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const postCards = document.querySelectorAll('.post-card');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 모든 버튼 비활성화 후 현재 버튼 활성화
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const category = btn.dataset.category;
+
+      postCards.forEach(card => {
+        const cardCategories = card.dataset.category.split(' ');
+        if (category === 'all' || cardCategories.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
