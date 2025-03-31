@@ -1,0 +1,250 @@
+/* 🌐 Reset & Global Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #ffffff;
+  color: #1c1c1e;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: #2b6ef2;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #1a53e8;
+  text-decoration: underline;
+}
+
+/* ========================
+   🔝 Header (Navbar)
+======================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #fff;
+}
+.navbar .left,
+.navbar .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navbar .left img {
+  height: 24px;
+}
+.navbar .right a {
+  font-size: 14px;
+  color: #1c1c1e;
+}
+.navbar .right button {
+  background: #2b6ef2;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.navbar .right button:last-child {
+  background: #f5f5f7;
+  color: #1c1c1e;
+}
+
+/* ========================
+   🎯 Hero Banner
+======================== */
+.hero-banner img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 48px;
+}
+
+/* ========================
+   📦 Container & Grid
+======================== */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px 48px 24px;
+}
+.main-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 48px;
+}
+
+/* ========================
+   🏷️ Category Tags
+======================== */
+.tag {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 16px;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  background: #f2f3f5;
+  color: #1c1c1e;
+  cursor: pointer;
+}
+.tag.active {
+  background: #2b6ef2;
+  color: white;
+}
+
+/* ========================
+   📰 Post Cards
+======================== */
+.card {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid #eee;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: background 0.2s ease;
+  margin-bottom: 32px;
+}
+.card:hover {
+  background: #f0f4ff;
+}
+.card-thumbnail {
+  width: 120px;
+  height: 96px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+}
+.card-content {
+  flex: 1;
+}
+.card-content h2 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  color: #111;
+}
+.card-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+.card-meta {
+  font-size: 13px;
+  color: #999;
+}
+
+
+
+/* ========================
+   🧭 Sidebar
+======================== */
+aside h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+aside li {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #1c1c1e;
+}
+aside li::before {
+  content: "•";
+  color: #aaa;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.recent-comment {
+  background: #f9fafb;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* ========================
+   🌙 Dark Mode
+======================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
+  .recent-comment {
+    background-color: #1e1e1e;
+    color: #ddd;
+  }
+  a {
+    color: #81aef7;
+  }
+  .card {
+    background: #1c1c1e;
+    border-color: #444;
+  }
+}
+
+/* ========================
+   📱 Responsive
+======================== */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    padding: 16px;
+  }
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.navbar .left img {
+  height: 48px; /* 로고는 너무 크지 않게 */
+  width: auto;  /* 비율 유지 */
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+/* ✅ 배너 전체 섹션 배경과 여백 개선 */
+.hero-banner {
+  margin: 48px 0;
+  padding: 24px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ✅ 배너 이미지 스타일 */
+.hero-banner img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}

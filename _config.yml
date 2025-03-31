@@ -1,0 +1,31 @@
+title: "DevchannyP 기술 블로그"
+description: "혼자 만드는 기술 서비스, 성장 과정과 노하우를 기록합니다."
+url: "https://devchannyp.github.io"
+author: "DevchannyP"
+email: "youremail@example.com"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+social:
+  name: DevchannyP
+  github: DevchannyP
+  twitter: devchanny
+  linkedin: devchanny
+
+exclude: ["README.md", "Gemfile", "Gemfile.lock", "node_modules", "vendor"]
+permalink: /:categories/:year/:month/:day/:title.html
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og-image.jpg
+
