@@ -1,0 +1,27 @@
+<!-- 📄 _layouts/post.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ page.title }} | {{ site.title }}</title>
+
+  {% seo %}
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/static/pretendard.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  {% include header.html %}
+
+  <!-- ✅ 마크다운 본문은 반드시 구조 안에 감싸야 함 -->
+  <main class="container">
+    <article class="post">
+      {{ content }}
+    </article>
+  </main>
+
+  {% include utterances.html %}
+
+</body>
+</html>
