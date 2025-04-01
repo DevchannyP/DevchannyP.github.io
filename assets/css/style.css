@@ -28,7 +28,6 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 24px 48px;
-  border-bottom: 1px solid #eaeaea;
   background-color: #fff;
 }
 .navbar .left,
@@ -38,7 +37,7 @@ a:hover {
   gap: 20px;
 }
 .navbar .left img {
-  height: 24px;
+  height: 48px;
   width: auto;
   object-fit: contain;
 }
