@@ -88,12 +88,13 @@ header {
 
 /* 🎯 Hero Banner */
 .hero-banner {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 0 24px;
+  margin: 48px 0;
 }
+
 .hero-banner img {
+  display: block;
   width: 100%;
+  max-width: 100%;
   border-radius: 12px;
   object-fit: cover;
 }
