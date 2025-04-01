@@ -1,10 +1,13 @@
+---
+layout: default
+title: Devchanny 기술 블로그
+---
 
-<!-- ① 배너 이미지 -->
 <section class="hero-banner">
   <img src="/assets/img/banner.png" alt="banner">
+  
 </section>
 
-<!-- ② 탭 버튼들 (WEB, SQL, JAVA 등 필터용 버튼) -->
 <div class="tabs">
   <button class="tab-btn active" data-category="all">전체</button>
   <button class="tab-btn" data-category="web">WEB</button>
@@ -13,7 +16,54 @@
   <button class="tab-btn" data-category="api">API</button>
 </div>
 
-<!-- ③ 포스트 카드들이 들어가는 메인 그리드 -->
 <main class="main-grid">
-  <!-- 여기에 각 포스트 카드들이 자동으로 나열돼요 -->
+  <section class="articles">
+    {% for post in site.posts %}
+      <div class="card post-card" data-category="{{ post.categories | join: ' ' }}">
+        <div class="card-thumbnail" style="background-image: url('{{ post.thumbnail | default: '/assets/img/default.png' }}')"></div>
+        <div class="card-content">
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p>{{ post.excerpt | strip_html | truncate: 80 }}</p>
+          <div class="card-meta">{{ post.date | date: "%Y년 %m월 %d일" }} · {{ post.author }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+
+  <aside class="sidebar">
+    <h3>인기있는 글</h3>
+    <ul id="popular-posts">
+      <!-- 여기서 JS로 렌더링됨 -->
+    </ul>
+
+    <h3>최근 댓글</h3>
+    <ul>
+      <li>🟣 씩씩한치타: 잘 읽었습니다!</li>
+      <li>🟡 활기찬늑대: 잘보고 가요~</li>
+    </ul>
+  </aside>
 </main>
+
+<script>
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const postCards = document.querySelectorAll('.post-card');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 모든 버튼 비활성화 후 현재 버튼 활성화
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const category = btn.dataset.category;
+
+      postCards.forEach(card => {
+        const cardCategories = card.dataset.category.split(' ');
+        if (category === 'all' || cardCategories.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
