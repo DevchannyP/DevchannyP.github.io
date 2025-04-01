@@ -17,6 +17,7 @@ title: Devchanny 기술 블로그
 </div>
 
 <main class="main-grid">
+  <!-- 왼쪽 글 목록 -->
   <section class="articles">
     {% for post in site.posts %}
       <div class="card post-card" data-category="{{ post.categories | join: ' ' }}">
@@ -30,17 +31,18 @@ title: Devchanny 기술 블로그
     {% endfor %}
   </section>
 
+  <!-- 오른쪽 사이드바 -->
   <aside class="sidebar">
     <h3>인기있는 글</h3>
     <ul id="popular-posts">
-      <!-- 여기서 JS로 렌더링됨 -->
+      <!-- JS로 인기글 삽입됨 -->
     </ul>
 
     <h3>최근 댓글</h3>
-    <ul>
-      <li>🟣 씩씩한치타: 잘 읽었습니다!</li>
-      <li>🟡 활기찬늑대: 잘보고 가요~</li>
-    </ul>
+    <div class="recent-comment">
+      <p>🟣 다정한곰<br>아래 댓글 답변 중에 ...</p>
+      <a href="#">캐시를 적용하기까지의 험난한 길</a>
+    </div>
   </aside>
 </main>
 
