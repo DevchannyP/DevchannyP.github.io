@@ -439,12 +439,10 @@ aside li::before {
 }
 
 
-/* 상단 메뉴를 토스 스타일처럼 버튼으로 꾸미기 */
+/* 심플하고 깔끔한 GitHub & 프로젝트 상단 메뉴 스타일 */
 .tag-nav {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 1.5rem;
-  margin-right: 2rem;
+  gap: 24px; /* 버튼 간격 */
 }
 
 .tag-nav-list {
@@ -456,21 +454,20 @@ aside li::before {
 }
 
 .tag-button {
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: 16px;
-  background-color: #f2f3f5;
-  color: #111;
-  font-weight: 500;
-  font-size: 14px;
-  text-decoration: none;
+  background: none;
   border: none;
-  transition: 0.2s;
+  color: #1a73e8; /* 토스 블루 */
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  border-bottom: 2px solid transparent;
 }
 
 .tag-button:hover {
-  background-color: #dbe9ff;
-  color: #0076f9;
+  color: #004fc4;
+  border-bottom: 2px solid #1a73e8;
 }
 
 .tag-button.active {
