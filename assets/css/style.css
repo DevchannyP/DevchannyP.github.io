@@ -23,13 +23,25 @@ a:hover {
 /* ========================
    🔝 Header (Navbar)
 ======================== */
+/* 헤더는 전체 폭을 가짐 */
+header {
+  width: 100%;
+}
+
+/* navbar는 중앙 정렬 + 폭 제한 */
 .navbar {
-  max-width: 960px;    /* ✅ 배너 크기에 맞춰 */
-  margin: 0 auto;       /* ✅ 가운데 정렬 */
-  padding: 24px 32px;   /* ✅ 좌우 여백 조정 (너무 넓지 않게) */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* 로고 크기 적당히 */
+.navbar .left img {
+  height: 48px;
+  object-fit: contain;
 }
 
 .navbar .left,
@@ -37,11 +49,6 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 20px;
-}
-.navbar .left img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
 }
 
 .navbar .right a {
