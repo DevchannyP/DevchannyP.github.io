@@ -23,23 +23,38 @@ a:hover {
 /* ========================
    🔝 Header (Navbar)
 ======================== */
+/* 헤더는 전체 폭을 가짐 */
+header {
+  width: 100%;
+}
+
+/* navbar는 중앙 정렬 + 폭 제한 */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px; /* 반응형 여백 */
+  width: 100%;
+}
+
+/* ✅ navbar 구성 */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 48px;
-  background-color: #fff;
+  padding: 24px 0;
 }
+
+/* ✅ 로고 사이즈 자연스럽게 */
+.navbar .left img {
+  height: 48px;
+  object-fit: contain;
+}
+
 .navbar .left,
 .navbar .right {
   display: flex;
   align-items: center;
   gap: 20px;
-}
-.navbar .left img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
 }
 
 .navbar .right a {
@@ -62,12 +77,15 @@ a:hover {
 
 /* 🎯 Hero Banner */
 .hero-banner {
-  margin: 48px 0;
+  margin-top: 64px;    /* ✅ 헤더와 배너 사이 간격 넉넉히 */
+  margin-bottom: 48px; /* ✅ 아래도 여백 부드럽게 */
   padding: 24px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #f1f4f7;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .hero-banner img {
@@ -87,10 +105,23 @@ a:hover {
   margin: 0 auto;
   padding: 0 24px 48px 24px;
 }
-.main-grid {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 48px;
+@media screen and (max-width: 768px) {
+  .main-grid {
+    display: block;             /* ✅ 우측 제거하고 세로로 */
+  }
+
+  .sidebar {
+    display: none;              /* ✅ 우측 인기글 숨기기 */
+  }
+
+  .container {
+    padding: 16px;              /* ✅ 모바일 여백 조정 */
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 
@@ -272,8 +303,6 @@ aside li::before {
   height: 48px; /* 로고는 너무 크지 않게 */
   width: auto;  /* 비율 유지 */
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* ========================
