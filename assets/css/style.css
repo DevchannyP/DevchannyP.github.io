@@ -24,12 +24,14 @@ a:hover {
    🔝 Header (Navbar)
 ======================== */
 .navbar {
+  max-width: 960px;    /* ✅ 배너 크기에 맞춰 */
+  margin: 0 auto;       /* ✅ 가운데 정렬 */
+  padding: 24px 32px;   /* ✅ 좌우 여백 조정 (너무 넓지 않게) */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 48px;
-  background-color: #fff;
 }
+
 .navbar .left,
 .navbar .right {
   display: flex;
@@ -62,6 +64,7 @@ a:hover {
 
 /* 🎯 Hero Banner */
 .hero-banner {
+  max-width: 960px;  
   margin: 48px 0;
   padding: 24px;
   background-color: #f1f4f7;
