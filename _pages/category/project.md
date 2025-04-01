@@ -1,8 +1,7 @@
 ---
-layout: home
+layout: default
 title: "📁 프로젝트"
 permalink: /categories/project/
-author_profile: true
-entries_layout: grid
-category: project
 ---
+
+{% include project-list.html %}
