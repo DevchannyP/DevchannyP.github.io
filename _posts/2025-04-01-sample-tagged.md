@@ -1,9 +1,9 @@
 ---
-title: 태그 테스트 포스트
+title: "AI 프로젝트"
 date: 2025-04-01
-layout: devchannyp
-tags: [JavaScript, Blog]
-categories: [Dev]
+categories: [project]
+tags: [ai, video]
+image: /assets/img/project-thumbnail.png
 ---
 
-이 포스트는 태그 페이지 기능 테스트용입니다.
+AI 기반 영상 편집 프로젝트 소개
