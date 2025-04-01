@@ -77,7 +77,6 @@ header {
 
 /* 🎯 Hero Banner */
 .hero-banner {
-  margin-top: 10px;
   margin-bottom: 48px; /* ✅ 아래도 여백 부드럽게 */
   padding: 24px;
   max-width: 960px;
@@ -93,7 +92,6 @@ header {
   max-height: 360px;
   height: auto;
   object-fit: cover;
-  border-radius: 12px;
   display: block;
 }
 
