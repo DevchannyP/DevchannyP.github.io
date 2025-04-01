@@ -30,13 +30,24 @@ header {
 }
 
 .header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 64px;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 24px;
+}
+
+.header-inner .left img {
+  height: 48px;
+  object-fit: contain;
+}
+
+.header-inner .right {
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
 
 /* navbar는 중앙 정렬 + 폭 제한 */
