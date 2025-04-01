@@ -47,10 +47,9 @@ title: Devchanny 기술 블로그
 <script>
   const tabButtons = document.querySelectorAll('.tab-btn');
   const postCards = document.querySelectorAll('.post-card');
-
+  
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      // 모든 버튼 비활성화 후 현재 버튼 활성화
       tabButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
@@ -67,3 +66,7 @@ title: Devchanny 기술 블로그
     });
   });
 </script>
+
+<!-- ✅ 인기글을 실제로 렌더링해주는 JS 파일을 연결 -->
+<script src="/assets/js/render-popular.js"></script>
+
