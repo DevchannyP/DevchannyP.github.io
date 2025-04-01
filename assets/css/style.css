@@ -26,36 +26,14 @@ a:hover {
 /* 헤더는 전체 폭을 가짐 */
 header {
   width: 100%;
-  background: white;
-}
-
-.header-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-}
-
-.header-inner .left img {
-  height: 48px;
-  object-fit: contain;
-}
-
-.header-inner .right {
-  display: flex;
-  gap: 24px;
-  align-items: center;
 }
 
 /* navbar는 중앙 정렬 + 폭 제한 */
 .container {
   max-width: 960px;
-  width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 16px; /* 반응형 여백 */
+  width: 100%;
 }
 
 /* ✅ navbar 구성 */
@@ -99,15 +77,24 @@ header {
 
 /* 🎯 Hero Banner */
 .hero-banner {
-  margin: 48px 0;
+  margin-top: 64px;    /* ✅ 헤더와 배너 사이 간격 넉넉히 */
+  margin-bottom: 48px; /* ✅ 아래도 여백 부드럽게 */
+  padding: 24px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f1f4f7;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .hero-banner img {
-  display: block;
   width: 100%;
-  max-width: 100%;
-  border-radius: 12px;
+  max-height: 360px;
+  height: auto;
   object-fit: cover;
+  border-radius: 12px;
+  display: block;
 }
 
 /* ========================
