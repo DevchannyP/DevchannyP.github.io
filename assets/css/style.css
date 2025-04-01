@@ -408,4 +408,35 @@ aside li::before {
   color: #007acc;
 }
 
+.menu-buttons {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.menu-buttons li {
+  display: inline;
+}
+
+.nav-button {
+  background-color: #f4f4f4;
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ddd;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #eaeaea;
+  color: #007aff;
+  border-color: #007aff;
+}
+
+
 
