@@ -373,3 +373,19 @@ aside li::before {
   font-style: italic;
   color: #555;
 }
+
+.post-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.post-preview img {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+}
+.post-preview .post-meta {
+  flex: 1;
+}
+
