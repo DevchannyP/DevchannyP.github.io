@@ -29,16 +29,22 @@ header {
 }
 
 /* navbar는 중앙 정렬 + 폭 제한 */
-.navbar {
+.container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 24px 32px;
+  padding: 0 16px; /* 반응형 여백 */
+  width: 100%;
+}
+
+/* ✅ navbar 구성 */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 24px 0;
 }
 
-/* 로고 크기 적당히 */
+/* ✅ 로고 사이즈 자연스럽게 */
 .navbar .left img {
   height: 48px;
   object-fit: contain;
