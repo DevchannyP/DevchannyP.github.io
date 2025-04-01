@@ -439,4 +439,43 @@ aside li::before {
 }
 
 
+/* 상단 메뉴를 토스 스타일처럼 버튼으로 꾸미기 */
+.tag-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  margin-right: 2rem;
+}
+
+.tag-nav-list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag-button {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 16px;
+  background-color: #f2f3f5;
+  color: #111;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  transition: 0.2s;
+}
+
+.tag-button:hover {
+  background-color: #dbe9ff;
+  color: #0076f9;
+}
+
+.tag-button.active {
+  background-color: #0076f9;
+  color: white;
+}
+
 
