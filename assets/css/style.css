@@ -478,36 +478,28 @@ aside li::before {
   color: white;
 }
 
-/* 🔹 버튼 전체 컨테이너 */
+/* 🔷 헤더 버튼 스타일 */
 .tag-nav {
   display: flex;
-  gap: 12px;
+  gap: 24px; /* 버튼 간격 충분히 줌 */
 }
 
-/* 🔹 버튼 스타일 */
 .tag-button {
-  padding: 6px 18px;
-  border-radius: 9999px;
-  background-color: #f4f5f7;
-  color: #222;
-  font-size: 14px;
-  font-weight: 500;
+  background-color: transparent; /* 배경 제거 */
+  color: #1a73e8; /* 토스 블루 컬러 */
+  font-weight: 600; /* 글자 굵게 */
+  font-size: 15px;
   text-decoration: none;
-  border: 1px solid transparent;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  border: none;
+  padding: 6px 0;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  border-bottom: 2px solid transparent; /* 깔끔한 밑줄 효과용 */
 }
 
-/* 🔹 호버 효과 */
+/* 🔷 마우스 올렸을 때 밑줄 효과 */
 .tag-button:hover {
-  background-color: #e3f0ff;
-  color: #1a73e8;
-  border-color: #1a73e8;
-}
-
-/* 🔹 현재 페이지에 active 스타일 적용하고 싶다면 */
-.tag-button.active {
-  background-color: #1a73e8;
-  color: white;
+  color: #004fc4; /* 더 진한 파란색 */
+  border-bottom: 2px solid #1a73e8;
 }
 
 
