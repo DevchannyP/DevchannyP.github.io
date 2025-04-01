@@ -102,12 +102,9 @@ header {
     gap: 16px;
     padding: 16px;
   }
-  .main-grid {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 48px;
-  align-items: start;
-}
+.main-grid {
+    grid-template-columns: 1fr;
+  }
 
 .card {
     flex-direction: column;
@@ -276,8 +273,9 @@ aside li::before {
   grid-template-columns: 3fr 1fr;
   gap: 48px;
 }
-  .container {
-    padding: 16px;
+.container {
+    max-width: 1080px;
+    padding: 0 24px 48px;
   }
   .card {
     flex-direction: column;
