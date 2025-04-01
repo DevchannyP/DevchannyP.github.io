@@ -77,7 +77,7 @@ header {
 
 /* 🎯 Hero Banner */
 .hero-banner {
-  margin-top: 10px;    /* ✅ 헤더와 배너 사이 간격 넉넉히 */
+  margin-top: 10px;
   margin-bottom: 48px; /* ✅ 아래도 여백 부드럽게 */
   padding: 24px;
   max-width: 960px;
@@ -111,7 +111,7 @@ header {
   }
 
   .sidebar {
-    display: none;              /* ✅ 우측 인기글 숨기기 */
+    display: block !important; /* ✅ 강제로 보이게 함 */
   }
 
   .container {
