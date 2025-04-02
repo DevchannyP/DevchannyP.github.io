@@ -76,19 +76,24 @@ title: Devchanny 기술 블로그
   </section>
 
 
-  <!-- 오른쪽 사이드바 -->
-  <aside class="sidebar">
-    <h3>인기있는 글</h3>
-    <ul id="popular-posts">
-      <!-- JS로 인기글 삽입됨 -->
-    </ul>
 
-    <h3>최근 댓글</h3>
+<aside class="sidebar">
+  <h3>최근 학습한 기술</h3>
+  <ul>
+    {% assign non_project_posts = site.posts | reject: "categories", "project" | sort: "date" | reverse | slice: 0, 3 %}
+    {% for post in non_project_posts %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h3>최근 완료된 프로젝트</h3>
+  {% assign project_posts = site.posts | where_exp: "post", "post.categories contains 'project'" | sort: "date" | reverse | slice: 0, 2 %}
+  {% for post in project_posts %}
     <div class="recent-comment">
-      <p>🟣 다정한곰<br>아래 댓글 답변 중에 ...</p>
-      <a href="#">캐시를 적용하기까지의 험난한 길</a>
+      <a href="{{ post.url }}">{{ post.title }}</a>
     </div>
-  </aside>
+  {% endfor %}
+</aside>
 </main>
 
 
