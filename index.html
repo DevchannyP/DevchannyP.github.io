@@ -142,4 +142,51 @@ title: Devchanny 기술 블로그
   });
 </script>
 
+<!-- 🔽 여기에 HTML 구조와 카드들(post-card)이 있고... -->
+
+<!-- 🔚 HTML 끝나기 직전에 JavaScript 삽입 -->
+<script>
+  // ① 상위 카테고리 필터링 + 세부 카테고리 표시
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const postCards = document.querySelectorAll('.post-card');
+  const subCategoryBlocks = document.querySelectorAll('.sub-categories');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selected = btn.dataset.category;
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      subCategoryBlocks.forEach(block => block.style.display = 'none');
+
+      const subBlock = document.getElementById(`${selected}-sub`);
+      if (subBlock) subBlock.style.display = 'block';
+
+      if (selected === 'all') {
+        postCards.forEach(card => card.style.display = 'block');
+      } else {
+        postCards.forEach(card => {
+          const cardCats = card.dataset.category.split(" ");
+          card.style.display = cardCats.includes(selected) ? 'block' : 'none';
+        });
+      }
+    });
+  });
+
+  // ② ✅ 여기! 세부 카테고리 필터링 코드 추가
+  document.querySelectorAll('.sub-tab-btn').forEach(subBtn => {
+    subBtn.addEventListener('click', () => {
+      const selectedSub = subBtn.dataset.sub;
+
+      postCards.forEach(card => {
+        const cardCats = card.dataset.category.split(" ");
+        card.style.display = cardCats.includes(selectedSub) ? 'block' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
 
