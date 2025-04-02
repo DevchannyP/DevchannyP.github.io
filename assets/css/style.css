@@ -117,9 +117,12 @@ header {
 /* ========================
    🧭 카테고리 탭 + 드롭다운 통합 스타일
 ======================== */
+/* ========================
+   🧭 카테고리 탭 + 드롭다운 통합 스타일
+======================== */
 .tabs {
   display: flex;
-  flex-wrap: wrap;      /* 줄바꿈 지원 */
+  flex-wrap: wrap;
   gap: 12px;
   margin: 32px 0;
   padding: 0 24px;
@@ -132,7 +135,7 @@ header {
   position: relative;
 }
 
-/* 버튼 스타일: 기존 pill 스타일 유지 + 호환성 조정 */
+/* 버튼 스타일 (pill 유지) */
 .tab-btn {
   padding: 10px 20px;
   font-size: 14px;
@@ -158,7 +161,7 @@ header {
   box-shadow: 0 2px 4px rgba(43,110,242,0.25);
 }
 
-/* 드롭다운 세부 카테고리 스타일 */
+/* 드롭다운 세부 카테고리 */
 .sub-categories {
   position: absolute;
   top: -5px;
@@ -175,12 +178,13 @@ header {
   z-index: 999;
 }
 
+/* 드롭다운 hover 시 나타남 */
 .tab-dropdown:hover .sub-categories {
   display: flex;
   animation: fadeInUp 0.3s ease-out;
 }
 
-/* 세부 카테고리 항목 스타일 */
+/* 세부 카테고리 항목 */
 .sub-categories span {
   padding: 5px 10px;
   cursor: pointer;
@@ -195,7 +199,7 @@ header {
   border-radius: 4px;
 }
 
-/* 애니메이션 효과 */
+/* 부드러운 나타남 효과 */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -206,6 +210,7 @@ header {
     transform: translateY(0%);
   }
 }
+
 
 
 /* ========================
