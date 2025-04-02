@@ -114,39 +114,99 @@ header {
 
 
 /* 🏷️ Category Tabs */
+/* ========================
+   🧭 카테고리 탭 + 드롭다운 통합 스타일
+======================== */
 .tabs {
   display: flex;
-  flex-wrap: wrap; /* 줄바꿈 지원 */
+  flex-wrap: wrap;      /* 줄바꿈 지원 */
   gap: 12px;
   margin: 32px 0;
   padding: 0 24px;
-  justify-content: flex-start; /* ✅ 왼쪽 정렬로 변경 */
+  justify-content: flex-start;
+  position: relative;
+  z-index: 10;
 }
 
-.tabs button {
+.tab-dropdown {
+  position: relative;
+}
+
+/* 버튼 스타일: 기존 pill 스타일 유지 + 호환성 조정 */
+.tab-btn {
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
   color: #1c1c1e;
   background-color: #f2f3f5;
   border: 1px solid transparent;
-  border-radius: 9999px; /* 완전한 pill 형태 */
+  border-radius: 9999px;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 
-.tabs button:hover {
+.tab-btn:hover {
   background-color: #e5e8eb;
   border-color: #d0d3d6;
 }
 
-.tabs button.active {
+.tab-btn.active {
   background-color: #2b6ef2;
   color: #fff;
   border-color: #2b6ef2;
   box-shadow: 0 2px 4px rgba(43,110,242,0.25);
 }
+
+/* 드롭다운 세부 카테고리 스타일 */
+.sub-categories {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  transform: translateY(-100%);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  gap: 5px;
+  z-index: 999;
+}
+
+.tab-dropdown:hover .sub-categories {
+  display: flex;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* 세부 카테고리 항목 스타일 */
+.sub-categories span {
+  padding: 5px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 13px;
+  color: #1c1c1e;
+  transition: background-color 0.2s ease;
+}
+
+.sub-categories span:hover {
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 
 /* ========================
    📰 Post Cards
