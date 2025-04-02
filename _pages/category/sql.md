@@ -1,7 +1,7 @@
 ---
 layout: devchannyp
 title: "SQL"
-permalink: /category/sql/
+permalink: /category/backend/db/sql/
 ---
 
 <h1>🗂️ SQL 카테고리 글 목록</h1>
