@@ -10,10 +10,54 @@ title: Devchanny 기술 블로그
 
 <div class="tabs">
   <button class="tab-btn active" data-category="all">전체</button>
-  <button class="tab-btn" data-category="web">WEB</button>
-  <button class="tab-btn" data-category="sql">SQL</button>
-  <button class="tab-btn" data-category="java">JAVA</button>
-  <button class="tab-btn" data-category="api">API</button>
+  <button class="tab-btn" data-category="frontend">프론트엔드</button>
+  <button class="tab-btn" data-category="backend">백엔드</button>
+  <button class="tab-btn" data-category="server">서버</button>
+  <button class="tab-btn" data-category="data-ai">데이터 / AI</button>
+  <button class="tab-btn" data-category="project">프로젝트</button>
+</div>
+
+<!-- 프론트엔드 세부 카테고리 -->
+<div class="sub-categories" id="frontend-sub" style="display: none;">
+  <button class="sub-tab-btn" data-sub="markup">마크업&스타일링</button>
+  <button class="sub-tab-btn" data-sub="core">핵심 프로그래밍 언어</button>
+  <button class="sub-tab-btn" data-sub="framework">프레임워크 / 라이브러리</button>
+  <button class="sub-tab-btn" data-sub="etc">기타 기술</button>
+</div>
+
+<!-- 백엔드 세부 카테고리 -->
+<div class="sub-categories" id="backend-sub" style="display: none;">
+  <button class="sub-tab-btn" data-sub="language">서버 사이드 언어</button>
+  <button class="sub-tab-btn" data-sub="backend-fw">백엔드 프레임워크</button>
+  <button class="sub-tab-btn" data-sub="db">데이터베이스</button>
+  <button class="sub-tab-btn" data-sub="api">API 설계 및 통신</button>
+  <button class="sub-tab-btn" data-sub="auth">인증 및 보안</button>
+  <button class="sub-tab-btn" data-sub="deploy">서버 운영 및 배포</button>
+</div>
+
+<!-- 서버 세부 카테고리 -->
+<div class="sub-categories" id="server-sub" style="display: none;">
+  <button class="sub-tab-btn" data-sub="os">운영체제 & 서버</button>
+  <button class="sub-tab-btn" data-sub="container">가상화 & 컨테이너</button>
+  <button class="sub-tab-btn" data-sub="cloud">클라우드 환경</button>
+  <button class="sub-tab-btn" data-sub="cicd">CI/CD 자동화</button>
+  <button class="sub-tab-btn" data-sub="sec">보안 및 인증</button>
+  <button class="sub-tab-btn" data-sub="log">로깅 및 모니터링</button>
+</div>
+
+<!-- 데이터 / AI 세부 카테고리 -->
+<div class="sub-categories" id="data-ai-sub" style="display: none;">
+  <button class="sub-tab-btn" data-sub="data-tech">데이터 처리 기술</button>
+  <button class="sub-tab-btn" data-sub="ml">머신러닝 / 딥러닝 프레임워크</button>
+  <button class="sub-tab-btn" data-sub="modeling">모델링 기법</button>
+  <button class="sub-tab-btn" data-sub="ai-service">AI 서비스 구현</button>
+  <button class="sub-tab-btn" data-sub="data-etc">기타 기술</button>
+</div>
+
+<!-- 프로젝트 세부 카테고리 -->
+<div class="sub-categories" id="project-sub" style="display: none;">
+  <button class="sub-tab-btn" data-sub="team">팀 프로젝트</button>
+  <button class="sub-tab-btn" data-sub="personal">개인 프로젝트</button>
 </div>
 
 <main class="main-grid">
@@ -69,3 +113,33 @@ title: Devchanny 기술 블로그
     });
   });
 </script>
+
+
+<script>
+  // 모든 상위 카테고리 탭 버튼을 찾는다
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    // 각 버튼에 클릭 이벤트를 준다
+    btn.addEventListener('click', () => {
+      const selected = btn.dataset.category;  // 어떤 버튼인지 가져오기
+
+      // 모든 상위 탭 버튼에서 active 표시를 없앤다
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+      // 지금 누른 버튼에 active 표시 추가
+      btn.classList.add('active');
+
+      // 모든 세부 카테고리 숨기기
+      document.querySelectorAll('.sub-categories').forEach(div => {
+        div.style.display = 'none';
+      });
+
+      // 내가 클릭한 상위 카테고리에 해당하는 세부 카테고리만 보이게 하기
+      const subDiv = document.getElementById(`${selected}-sub`);
+      if (subDiv) {
+        subDiv.style.display = 'block';
+      }
+    });
+  });
+</script>
+
+
