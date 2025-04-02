@@ -208,38 +208,88 @@ header {
 /* ========================
    🧭 Sidebar
 ======================== */
+/* ========================
+   🧭 Sidebar 개선 스타일
+======================== */
 .sidebar {
   background: #f9fafb;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 24px;
   font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
-aside h3 {
+
+/* 제목 스타일 */
+.sidebar h3 {
   font-size: 16px;
+  font-weight: 600;
   margin-bottom: 16px;
+  color: #222;
 }
-aside ul {
+
+/* 학습한 기술 목록 */
+.sidebar ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 24px;
 }
-aside li {
-  font-size: 14px;
+
+.sidebar ul li {
+  position: relative;
+  padding-left: 20px;
   margin-bottom: 12px;
+  font-size: 14px;
   color: #1c1c1e;
+  transition: all 0.2s ease;
 }
-aside li::before {
-  content: "•";
-  color: #aaa;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+
+.sidebar ul li::before {
+  content: "📘";
+  position: absolute;
+  left: 0;
+  top: 0;
 }
+
+/* 학습 항목 링크 */
+.sidebar ul li a {
+  color: #2b6ef2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+  color: #1a53e8;
+  text-decoration: underline;
+}
+
+/* 프로젝트 카드 형태 */
 .recent-comment {
-  background: #f9fafb;
-  padding: 12px 16px;
+  background: #f4f6f8;
+  border-left: 4px solid #007BFF;
+  padding: 14px 16px;
   border-radius: 12px;
   font-size: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.recent-comment:hover {
+  background: #e9f0fc;
+}
+
+/* 프로젝트 링크 */
+.recent-comment a {
+  color: #007BFF;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.recent-comment a:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
 /* ========================
