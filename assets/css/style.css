@@ -519,3 +519,39 @@ aside li::before {
   align-items: start;
 }
 
+
+.sub-categories {
+  display: flex;
+  flex-wrap: wrap;               /* 버튼이 넘치면 다음 줄로 */
+  gap: 10px;                     /* 버튼 사이 간격 */
+  margin: 20px 0;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  justify-content: flex-start;  /* 왼쪽 정렬 */
+}
+
+/* 개별 버튼 스타일 */
+.sub-tab-btn {
+  padding: 8px 16px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 마우스 올렸을 때 */
+.sub-tab-btn:hover {
+  background-color: #007BFF;
+  color: white;
+  border-color: #007BFF;
+}
+
+/* 클릭했을 때를 위한 클래스 (선택적) */
+.sub-tab-btn.active {
+  background-color: #0056b3;
+  color: white;
+  border-color: #0056b3;
+}
