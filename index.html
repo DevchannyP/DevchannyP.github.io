@@ -146,18 +146,19 @@ title: Devchanny 기술 블로그
 
 <!-- 🔚 HTML 끝나기 직전에 JavaScript 삽입 -->
 <script>
-  // ① 상위 카테고리 필터링 + 세부 카테고리 표시
   const tabButtons = document.querySelectorAll('.tab-btn');
   const postCards = document.querySelectorAll('.post-card');
   const subCategoryBlocks = document.querySelectorAll('.sub-categories');
 
+  // ① 상위 탭 버튼 클릭 시 - 세부 카테고리 표시 + 글 필터링
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const selected = btn.dataset.category;
+
       tabButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      subCategoryBlocks.forEach(block => block.style.display = 'none');
 
+      subCategoryBlocks.forEach(block => block.style.display = 'none');
       const subBlock = document.getElementById(`${selected}-sub`);
       if (subBlock) subBlock.style.display = 'block';
 
@@ -169,14 +170,23 @@ title: Devchanny 기술 블로그
           card.style.display = cardCats.includes(selected) ? 'block' : 'none';
         });
       }
+
+      // 👉 탭 전환 시 세부 버튼의 active 도 모두 초기화
+      document.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
     });
   });
 
-  // ② ✅ 여기! 세부 카테고리 필터링 코드 추가
+  // ② ✅ 세부 카테고리 버튼 클릭 시 - 글 필터링 + active 스타일 추가
   document.querySelectorAll('.sub-tab-btn').forEach(subBtn => {
     subBtn.addEventListener('click', () => {
-      const selectedSub = subBtn.dataset.sub;
+      // 다른 세부 버튼에서 active 제거
+      document.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
 
+      // 지금 누른 버튼만 active 추가
+      subBtn.classList.add('active');
+
+      // 글 필터링 처리
+      const selectedSub = subBtn.dataset.sub;
       postCards.forEach(card => {
         const cardCats = card.dataset.category.split(" ");
         card.style.display = cardCats.includes(selectedSub) ? 'block' : 'none';
@@ -184,9 +194,6 @@ title: Devchanny 기술 블로그
     });
   });
 </script>
-
-</body>
-</html>
 
 
 
