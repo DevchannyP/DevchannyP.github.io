@@ -20,16 +20,4 @@ permalink: /category/backend/db/sql/
     {% endfor %}
   </section>
 
-  <aside class="sidebar">
-    <h3>인기있는 글</h3>
-    <ul id="popular-posts">
-      <!-- JS 렌더링 -->
-    </ul>
-
-    <h3>최근 댓글</h3>
-    <ul>
-      <li>🟣 씩씩한치타: 잘 읽었습니다!</li>
-      <li>🟡 활기찬늑대: 잘보고 가요~</li>
-    </ul>
-  </aside>
 </main>
