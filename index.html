@@ -75,27 +75,23 @@ title: Devchanny 기술 블로그
     {% endfor %}
   </section>
 
-<!-- 오른쪽 사이드바 -->
-<aside class="sidebar">
-  <!-- ✅ 최근 학습한 기술 -->
-  <h3>최근 학습한 기술</h3>
-  <ul>
-    {% assign recent_tech_posts = site.posts | where_exp: "post", "post.categories contains 'frontend' or post.categories contains 'backend' or post.categories contains 'server' or post.categories contains 'data-ai'" | sort: "date" | reverse | slice: 0, 3 %}
-    {% for post in recent_tech_posts %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
 
-  <!-- ✅ 최근 완료된 프로젝트 -->
-  <h3>최근 완료된 프로젝트</h3>
-  {% assign recent_projects = site.posts | where_exp: "post", "post.categories contains 'project'" | sort: "date" | reverse | slice: 0, 2 %}
-  {% for post in recent_projects %}
+  <!-- 오른쪽 사이드바 -->
+  <aside class="sidebar">
+    <h3>인기있는 글</h3>
+    <ul id="popular-posts">
+      <!-- JS로 인기글 삽입됨 -->
+    </ul>
+
+    <h3>최근 댓글</h3>
     <div class="recent-comment">
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <p>🟣 다정한곰<br>아래 댓글 답변 중에 ...</p>
+      <a href="#">캐시를 적용하기까지의 험난한 길</a>
     </div>
-  {% endfor %}
-</aside>
+  </aside>
 </main>
+
+
 
 <script>
   const tabButtons = document.querySelectorAll('.tab-btn');
