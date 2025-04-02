@@ -244,7 +244,7 @@ header {
 }
 
 .sidebar ul li::before {
-  content: "📘";
+  content: "💡";
   position: absolute;
   left: 0;
   top: 0;
@@ -260,6 +260,31 @@ header {
 .sidebar ul li a:hover {
   color: #1a53e8;
   text-decoration: underline;
+}
+
+/* 제목 링크 스타일 */
+.sidebar-title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.sidebar-title:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* 요약 텍스트 스타일 */
+.sidebar-excerpt {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  font-family: 'Pretendard', sans-serif;
+  margin: 0;
 }
 
 /* 프로젝트 카드 형태 */
