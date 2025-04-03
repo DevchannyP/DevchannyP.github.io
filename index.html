@@ -115,180 +115,91 @@ title: Devchanny 기술 블로그
 
 
 
-<script>
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const postCards = document.querySelectorAll('.post-card');
-
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // 모든 버튼 비활성화 후 현재 버튼 활성화
-      tabButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const category = btn.dataset.category;
-
-      postCards.forEach(card => {
-        const cardCategories = card.dataset.category.split(' ');
-        if (category === 'all' || cardCategories.includes(category)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
-
-
-<script>
-  // 모든 상위 카테고리 탭 버튼을 찾는다
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    // 각 버튼에 클릭 이벤트를 준다
-    btn.addEventListener('click', () => {
-      const selected = btn.dataset.category;  // 어떤 버튼인지 가져오기
-
-      // 모든 상위 탭 버튼에서 active 표시를 없앤다
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-
-      // 지금 누른 버튼에 active 표시 추가
-      btn.classList.add('active');
-
-      // 모든 세부 카테고리 숨기기
-      document.querySelectorAll('.sub-categories').forEach(div => {
-        div.style.display = 'none';
-      });
-
-      // 내가 클릭한 상위 카테고리에 해당하는 세부 카테고리만 보이게 하기
-      const subDiv = document.getElementById(`${selected}-sub`);
-      if (subDiv) {
-        subDiv.style.display = 'block';
-      }
-    });
-  });
-</script>
-
 <!-- 🔽 여기에 HTML 구조와 카드들(post-card)이 있고... -->
-
 <script>
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const subTabButtons = document.querySelectorAll('.sub-tab-btn');
   const postCards = document.querySelectorAll('.post-card');
-  const subCategoryBlocks = document.querySelectorAll('.sub-categories');
 
+  let currentMain = "all";
   let currentSub = null;
-
-  // ✅ 상위 카테고리 클릭 시
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const category = btn.dataset.category;
-
-      // 상위 active 설정
-      tabButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // 세부 카테고리 보여주기
-      subCategoryBlocks.forEach(div => (div.style.display = 'none'));
-      const subBlock = document.getElementById(`${category}-sub`);
-      if (subBlock) {
-        subBlock.style.display = 'flex';
-
-        // 이전에 눌렸던 세부 active 버튼 복원 (옵션)
-        const subBtns = subBlock.querySelectorAll('.sub-tab-btn');
-        let restored = false;
-        subBtns.forEach(btn => {
-          btn.classList.remove('active');
-          if (btn.dataset.sub === currentSub) {
-            btn.classList.add('active');
-            restored = true;
-          }
-        });
-
-        if (restored) {
-          postCards.forEach(card => {
-            const cardCats = card.dataset.category.split(' ');
-            card.style.display = cardCats.includes(currentSub) ? 'block' : 'none';
-          });
-          return; // 복원 완료 시 여기서 중단
-        }
-      }
-
-      // 기본 카테고리 필터링
-      currentSub = null;
-      subTabButtons.forEach(b => b.classList.remove('active')); // 모든 세부 버튼 초기화
-      postCards.forEach(card => {
-        const cardCats = card.dataset.category.split(' ');
-        card.style.display = category === 'all' || cardCats.includes(category) ? 'block' : 'none';
-      });
-    });
-  });
-
-  // ✅ 세부 카테고리 클릭 시
-  subTabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // 기존 세부 버튼 active 제거
-      const parentSubGroup = btn.closest('.sub-categories');
-      parentSubGroup.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
-
-      // 현재 클릭된 버튼 active 추가
-      btn.classList.add('active');
-
-      // 필터링
-      currentSub = btn.dataset.sub;
-      postCards.forEach(card => {
-        const cardCats = card.dataset.category.split(' ');
-        card.style.display = cardCats.includes(currentSub) ? 'block' : 'none';
-      });
-    });
-  });
-</script>
-
-<script>
-  const subSubTabButtons = document.querySelectorAll('.sub-sub-tab-btn');
   let currentSubSub = null;
 
-  subSubTabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // ✅ 기존 active 초기화
-      const parent = btn.closest('.sub-sub-categories');
-      parent.querySelectorAll('.sub-sub-tab-btn').forEach(b => b.classList.remove('active'));
+  // 🔍 카드 필터링 함수 (3단계 필터)
+  function filterCards() {
+    postCards.forEach(card => {
+      const cardCats = card.dataset.category.split(" ");
 
-      // ✅ 현재 클릭된 버튼 active 적용
-      btn.classList.add('active');
-      currentSubSub = btn.dataset.subSub;
+      const matchesMain = currentMain === "all" || cardCats.includes(currentMain);
+      const matchesSub = !currentSub || cardCats.includes(currentSub);
+      const matchesSubSub = !currentSubSub || cardCats.includes(currentSubSub);
 
-      // ✅ 포스트 필터링 (카드에 포함된 모든 카테고리 중 하나라도 일치하면 표시)
-      postCards.forEach(card => {
-        const cardCats = card.dataset.category.split(" ");
-        card.style.display = cardCats.includes(currentSubSub) ? 'block' : 'none';
-      });
+      if (matchesMain && matchesSub && matchesSubSub) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // ✅ 1단계: 상위 카테고리 클릭
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentMain = btn.dataset.category;
+      currentSub = null;
+      currentSubSub = null;
+
+      // active 처리
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // 세부/하위 카테고리 초기화
+      document.querySelectorAll(".sub-categories").forEach(div => div.style.display = "none");
+      document.querySelectorAll(".sub-sub-categories").forEach(div => div.style.display = "none");
+
+      // 해당 세부 카테고리만 보여주기
+      const subDiv = document.getElementById(`${currentMain}-sub`);
+      if (subDiv) subDiv.style.display = "flex";
+
+      // 버튼 초기화
+      document.querySelectorAll(".sub-tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".sub-sub-tab-btn").forEach(b => b.classList.remove("active"));
+
+      filterCards();
     });
   });
 
-  // ✅ 세부 카테고리 클릭 시 하위카테고리 보이기
-  subTabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // 기존 처리 유지
-      const parent = btn.closest('.sub-categories');
-      parent.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
+  // ✅ 2단계: 세부 카테고리 클릭
+  document.querySelectorAll(".sub-tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
       currentSub = btn.dataset.sub;
       currentSubSub = null;
 
-      // 🔽 하위 카테고리 보여주기
-      document.querySelectorAll('.sub-sub-categories').forEach(div => (div.style.display = 'none'));
-      const subSubDiv = document.getElementById(`${currentSub}-sub`);
-      if (subSubDiv) {
-        subSubDiv.style.display = 'flex';
-      }
+      // active 처리
+      const group = btn.closest('.sub-categories');
+      group.querySelectorAll(".sub-tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
 
-      // 🔽 카드 필터링
-      postCards.forEach(card => {
-        const cardCats = card.dataset.category.split(' ');
-        card.style.display = cardCats.includes(currentSub) ? 'block' : 'none';
-      });
+      // 하위 카테고리 영역 표시
+      document.querySelectorAll(".sub-sub-categories").forEach(div => div.style.display = "none");
+      const subSubDiv = document.getElementById(`${currentSub}-sub`);
+      if (subSubDiv) subSubDiv.style.display = "flex";
+
+      document.querySelectorAll(".sub-sub-tab-btn").forEach(b => b.classList.remove("active"));
+
+      filterCards();
+    });
+  });
+
+  // ✅ 3단계: 하위 카테고리 클릭
+  document.querySelectorAll(".sub-sub-tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentSubSub = btn.dataset.subSub;
+
+      const group = btn.closest('.sub-sub-categories');
+      group.querySelectorAll(".sub-sub-tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      filterCards();
     });
   });
 </script>
-
 
