@@ -606,28 +606,32 @@ header {
 
 /* 개별 버튼 스타일 */
 .sub-tab-btn {
-  padding: 8px 16px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 14px;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 9999px;             /* pill 형태 유지 */
+  background-color: transparent;
+  color: #1a73e8;                    /* 토스 블루 */
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  border-bottom: 2px solid transparent;
 }
 
-/* 🎯 세부 카테고리 버튼 활성화 스타일 */
-.sub-tab-btn.active {
-  background-color: #2b6ef2;       /* 파란색 배경 - 상위 탭과 동일 */
-  color: #ffffff;                  /* 흰 글씨 */
-  border-color: #2b6ef2;           /* 파란색 테두리 */
-  box-shadow: 0 2px 4px rgba(43, 110, 242, 0.25); /* 그림자 효과 */
-}
-
-/* 마우스 올렸을 때도 더 파랗게 */
+/* 마우스 올렸을 때 */
 .sub-tab-btn:hover {
-  background-color: #1a53e8;
+  color: #004fc4;
+  border-bottom: 2px solid #1a73e8;
+}
+
+/* 활성화 상태 */
+.sub-tab-btn.active {
+  background-color: #0076f9;
   color: white;
-  border-color: #1a53e8;
+  border: none;
+  border-bottom: 2px solid transparent; /* 깔끔한 유지 */
 }
 
 .sub-sub-categories {
