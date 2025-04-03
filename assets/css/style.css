@@ -597,13 +597,11 @@ header {
 
 .sub-categories {
   display: flex;
-  flex-wrap: wrap;               /* 버튼이 넘치면 다음 줄로 */
-  gap: 10px;                     /* 버튼 사이 간격 */
-  margin: 20px 0;
-  padding: 10px 0;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  justify-content: flex-start;  /* 왼쪽 정렬 */
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;     /* 여백만 남기고 */
+  padding: 4px 0;
+  justify-content: flex-start;
 }
 
 /* 개별 버튼 스타일 */
@@ -617,16 +615,17 @@ header {
   transition: all 0.2s ease;
 }
 
-/* 마우스 올렸을 때 */
-.sub-tab-btn:hover {
-  background-color: #007BFF;
-  color: white;
-  border-color: #007BFF;
+/* 🎯 세부 카테고리 버튼 활성화 스타일 */
+.sub-tab-btn.active {
+  background-color: #2b6ef2;       /* 파란색 배경 - 상위 탭과 동일 */
+  color: #ffffff;                  /* 흰 글씨 */
+  border-color: #2b6ef2;           /* 파란색 테두리 */
+  box-shadow: 0 2px 4px rgba(43, 110, 242, 0.25); /* 그림자 효과 */
 }
 
-/* 클릭했을 때를 위한 클래스 (선택적) */
-.sub-tab-btn.active {
-  background-color: #0056b3;
+/* 마우스 올렸을 때도 더 파랗게 */
+.sub-tab-btn:hover {
+  background-color: #1a53e8;
   color: white;
-  border-color: #0056b3;
+  border-color: #1a53e8;
 }
