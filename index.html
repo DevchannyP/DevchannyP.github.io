@@ -242,4 +242,53 @@ title: Devchanny 기술 블로그
   });
 </script>
 
+<script>
+  const subSubTabButtons = document.querySelectorAll('.sub-sub-tab-btn');
+  let currentSubSub = null;
+
+  subSubTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // ✅ 기존 active 초기화
+      const parent = btn.closest('.sub-sub-categories');
+      parent.querySelectorAll('.sub-sub-tab-btn').forEach(b => b.classList.remove('active'));
+
+      // ✅ 현재 클릭된 버튼 active 적용
+      btn.classList.add('active');
+      currentSubSub = btn.dataset.subSub;
+
+      // ✅ 포스트 필터링 (카드에 포함된 모든 카테고리 중 하나라도 일치하면 표시)
+      postCards.forEach(card => {
+        const cardCats = card.dataset.category.split(" ");
+        card.style.display = cardCats.includes(currentSubSub) ? 'block' : 'none';
+      });
+    });
+  });
+
+  // ✅ 세부 카테고리 클릭 시 하위카테고리 보이기
+  subTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 기존 처리 유지
+      const parent = btn.closest('.sub-categories');
+      parent.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      currentSub = btn.dataset.sub;
+      currentSubSub = null;
+
+      // 🔽 하위 카테고리 보여주기
+      document.querySelectorAll('.sub-sub-categories').forEach(div => (div.style.display = 'none'));
+      const subSubDiv = document.getElementById(`${currentSub}-sub`);
+      if (subSubDiv) {
+        subSubDiv.style.display = 'flex';
+      }
+
+      // 🔽 카드 필터링
+      postCards.forEach(card => {
+        const cardCats = card.dataset.category.split(' ');
+        card.style.display = cardCats.includes(currentSub) ? 'block' : 'none';
+      });
+    });
+  });
+</script>
+
 
