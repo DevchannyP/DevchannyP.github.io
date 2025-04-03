@@ -2,8 +2,8 @@
 layout: post
 title: "자바스크립트 타자 게임 프로젝트"
 date: 2025-03-12
-categories: [project-sub, personal]
-tags: [project-sub, personal]
+categories: [project, personal]
+tags: [javascript, game, typing]
 thumbnail: /assets/img/post-thumbnails/intro4.png
 author: Devchanny
 ---
