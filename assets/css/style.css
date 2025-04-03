@@ -629,3 +629,34 @@ header {
   color: white;
   border-color: #1a53e8;
 }
+
+.sub-sub-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.sub-sub-tab-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sub-sub-tab-btn:hover {
+  background-color: #dbe5ff;
+  border-color: #2b6ef2;
+}
+
+.sub-sub-tab-btn.active {
+  background-color: #2b6ef2;
+  color: white;
+  border-color: #2b6ef2;
+}
+
