@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "자바스크립트 타자 게임 프로젝트"
+title: "Project01.자바스크립트 타자 게임 프로젝트"
 date: 2025-03-12
 categories: [project, personal]
 tags: [javascript, game, typing]
