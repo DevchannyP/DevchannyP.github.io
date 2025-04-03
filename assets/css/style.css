@@ -690,3 +690,160 @@ header {
   border-color: #2b6ef2;
 }
 
+@media screen and (max-width: 768px) {
+  /* 🔹 기본 구조 조정 */
+  body {
+    padding: 0 12px;
+  }
+
+  .main-grid {
+    display: block; /* 👉 사이드바 제거하고 세로 정렬 */
+  }
+
+  .sidebar {
+    display: none !important; /* ✅ 모바일에서는 사이드바 제거 */
+  }
+
+  /* 🔹 Hero Banner */
+  .hero-banner {
+    padding: 16px;
+    margin-bottom: 32px;
+  }
+
+  /* 🔹 Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .navbar .left img {
+    height: 42px;
+  }
+
+  /* 🔹 Tabs */
+  .tabs {
+    flex-direction: column;
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .tabs button {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* 🔹 Sub / Sub-sub Tabs */
+  .sub-categories,
+  .sub-sub-categories {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .sub-tab-btn,
+  .sub-sub-tab-btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* 🔹 Card (Post Item) */
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .card-thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* 👈 안정적인 반응형 썸네일 */
+    border-radius: 10px;
+  }
+
+  .card-content h2 {
+    font-size: 16px;
+  }
+
+  .card-content p {
+    font-size: 14px;
+    color: #444;
+  }
+
+  .card-meta {
+    font-size: 12px;
+  }
+
+  /* 🔹 Post Content */
+  .post {
+    padding: 24px 16px;
+  }
+
+  .post h1 {
+    font-size: 26px;
+  }
+
+  .post h2 {
+    font-size: 20px;
+  }
+
+  .post h3 {
+    font-size: 18px;
+  }
+
+  .post p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* 🔹 Table & Code Block 스크롤 가능 */
+  .post pre,
+  .post table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .post code {
+    font-size: 13px;
+  }
+
+  .post table th,
+  .post table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .post blockquote {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  /* 🔹 Post Preview */
+  .post-preview {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .post-preview img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 🔹 메뉴 및 태그 버튼 세로 정렬 */
+  .menu,
+  .menu-buttons,
+  .tag-nav,
+  .tag-nav-list {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tag-button {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
