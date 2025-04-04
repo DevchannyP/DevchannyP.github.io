@@ -14,7 +14,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-  collections:
+collections:
   posts:
     output: true
 
@@ -32,4 +32,3 @@ defaults:
       path: ""
     values:
       image: /assets/img/og-image.jpg
-
