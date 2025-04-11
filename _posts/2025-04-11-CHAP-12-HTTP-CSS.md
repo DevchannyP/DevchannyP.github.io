@@ -1,3 +1,4 @@
+
 ---
 layout: post
 title: "CHAP 12. 🌟 CSS 심화 완전정복"
@@ -7,6 +8,7 @@ tags: [frontend, language, html&css]
 thumbnail: /assets/img/post-thumbnails/intro12.png
 author: Devchanny
 ---
+
 ## 📐 **1️⃣ 레이아웃 & 정렬 최종판**
 
 | 개념 | 설명 | 비유 🌟 | 실무 포인트 🚀 |
