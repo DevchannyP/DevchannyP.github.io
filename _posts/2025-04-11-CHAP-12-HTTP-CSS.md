@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "CHAP 12. 🌟 CSS 심화 완전정복"
