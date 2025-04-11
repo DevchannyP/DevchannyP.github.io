@@ -8,7 +8,7 @@ thumbnail: /assets/img/post-thumbnails/intro0.png
 author: Devchanny
 ---
 
-# CHAP 0. 웹 개발 목차
+# 📌 웹 개발 목차
 
 ---
 
