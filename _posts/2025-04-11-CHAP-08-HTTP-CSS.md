@@ -1,6 +1,3 @@
-# CHAP 8. HTML 폼 태그 기초 → 심화 완벽 정리
-
-
 ---
 layout: post
 title: "CHAP 8. HTML 폼 태그 기초 심화 정리 "
