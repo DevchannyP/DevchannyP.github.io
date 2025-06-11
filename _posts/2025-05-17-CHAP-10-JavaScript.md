@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CHAP 10. 노션 활용 및 자바 기초 개념"
+title: "CHAP 10. 메모리 누수"
 date: 2025-05-17
 categories: [frontend, core, javascript]
 tags: [frontend, core, javascript]
