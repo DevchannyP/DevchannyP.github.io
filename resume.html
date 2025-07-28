@@ -286,11 +286,72 @@ permalink: /resume/
       .toolbar-btn, .resume-toolbar { display: none !important; }
       .resume-main, .profile-card, .skills-card, .section-card { box-shadow: none; }
     }
+
+    /* ★ 추가: 글로우 네임 */
+    .profile-name-glow {
+      background: linear-gradient(92deg, #40a0ff, #68f7ea 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 3px 13px #7dd9e7cc);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      animation: glow-in 1.3s cubic-bezier(.13,.6,.73,1.12);
+    }
+    @keyframes glow-in {
+      0% { filter: blur(5px) brightness(1.4); opacity: 0.4; }
+      100% { filter: blur(0) brightness(1); opacity: 1; }
+    }
+    /* ★ fade-in section (IntersectionObserver) */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(38px);
+      transition: opacity .62s cubic-bezier(.22,.6,.5,1), transform .64s cubic-bezier(.22,.6,.5,1);
+    }
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: none;
+    }
+    /* ★ 카드 Hover up */
+    .section-card:hover, .skills-card:hover {
+      box-shadow: 0 4px 44px #2297ff22, 0 1.5px 15px #9fc5ff28;
+      transform: translateY(-3.5px) scale(1.012);
+      transition: box-shadow .22s, transform .22s;
+    }
+    /* ★ 스킬뱃지 네온 효과 */
+    .skill-badge:hover, .skill-badge:focus {
+      background: #e0fdff !important;
+      color: #007fff !important;
+      box-shadow: 0 0 0 6px #00e3ff36, 0 1.5px 8px #48e4ff4c, var(--shadow-neon);
+      transform: translateY(-2.5px) scale(1.11);
+      z-index: 2;
+    }
+    /* ★ Glassmorphism */
+    .resume-toolbar {
+      backdrop-filter: blur(7px) saturate(110%);
+      background: rgba(249, 251, 255, 0.93);
+    }
+    .section-card, .skills-card, .profile-card {
+      background: rgba(255, 255, 255, 0.89);
+    }
+    body.dark .section-card, body.dark .skills-card, body.dark .profile-card {
+      background: rgba(34, 36, 58, 0.87);
+    }
+    /* ★ 프로젝트 구분선 separator dot */
+    .project-item:not(:last-child):after {
+      content: "";
+      display: block;
+      margin: 20px 0 0 4px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#a6e2ff 60%,#3182f6 100%);
+      box-shadow: 0 2px 7px #99dbfa66;
+      opacity: 0.75;
+    }
   </style>
 </head>
 <body>
   <div class="resume-main" id="resume">
-    <div class="resume-toolbar">
+    <div class="resume-toolbar fade-in-section">
       <button class="toolbar-btn" onclick="window.print()" aria-label="PDF로 저장">
         <i class="ri-download-2-line"></i> PDF/Paper 저장
       </button>
@@ -299,7 +360,7 @@ permalink: /resume/
       </button>
     </div>
     <!-- 프로필(상단) -->
-    <section class="profile-card">
+    <section class="profile-card fade-in-section">
       <div class="profile-img-wrap">
         <img
           src="/assets/img/converted_image.webp"
@@ -311,7 +372,7 @@ permalink: /resume/
         />
       </div>
       <div class="profile-maininfo">
-        <div class="profile-name">
+        <div class="profile-name profile-name-glow">
           박찬희 <span class="tossface" style="font-size:1.14em;">💙</span>
           <span class="profile-cert" title="풀스택 과정 수료(구디 아카데미)">
   <i class="ri-verified-badge-fill"></i> 풀스택 과정 수료
@@ -341,7 +402,7 @@ permalink: /resume/
     </section>
 
     <!-- 스킬 -->
-    <section class="skills-card">
+    <section class="skills-card fade-in-section">
       <div class="section-title"><i class="ri-sparkling-2-fill"></i> 기술 스택</div>
       <div class="skill-badges">
         <span class="skill-badge">Java</span>
@@ -366,7 +427,7 @@ permalink: /resume/
     </section>
 
     <!-- 프로젝트/경력 -->
-    <section class="section-card">
+    <section class="section-card fade-in-section">
       <div class="section-title"><i class="ri-medal-2-fill"></i> 주요 프로젝트</div>
       <div class="projects-timeline">
         <!-- 지방청년 프로젝트 -->
@@ -442,7 +503,7 @@ permalink: /resume/
     </section>
 
     <!-- 경력 -->
-    <section class="section-card">
+    <section class="section-card fade-in-section">
       <div class="section-title"><i class="ri-briefcase-5-fill"></i> 경력/활동</div>
       <table class="info-table">
         <tr><th>기간</th><th>소속/활동</th><th>주요 역할/성과</th></tr>
@@ -454,7 +515,7 @@ permalink: /resume/
     </section>
 
     <!-- 스킬/역량 (포트폴리오 기반 표) -->
-    <section class="section-card">
+    <section class="section-card fade-in-section">
       <div class="section-title"><i class="ri-trophy-fill"></i> 핵심 스킬/실무 역량</div>
       <div class="section-content">
         <table class="info-table">
@@ -470,7 +531,7 @@ permalink: /resume/
     </section>
 
     <!-- 학력/교육 -->
-    <section class="section-card">
+    <section class="section-card fade-in-section">
       <div class="section-title"><i class="ri-graduation-cap-fill"></i> 학력/교육</div>
       <div class="section-content">
         <ul>
@@ -482,7 +543,7 @@ permalink: /resume/
     </section>
 
     <!-- 자격/언어 -->
-    <section class="section-card">
+    <section class="section-card fade-in-section">
       <div class="section-title"><i class="ri-certificate-fill"></i> 자격/어학</div>
       <div class="section-content">
         <table class="info-table">
@@ -507,17 +568,29 @@ permalink: /resume/
       </div>
     </section>
 
-<!-- 블로그/기타/참고 -->
-<section class="section-card">
-  <div class="section-title"><i class="ri-global-fill"></i> 블로그/참고 링크</div>
-  <div class="section-content">
-    <a href="https://devchannyp-github-io.pages.dev/" target="_blank" rel="noopener">👉 기술 블로그 바로가기</a> <br>
-    <a href="https://github.com/DevchannyP" target="_blank" rel="noopener">👉 GitHub 전체 프로젝트</a>
-  </div>
-</section>
-
+    <!-- 블로그/기타/참고 -->
+    <section class="section-card fade-in-section">
+      <div class="section-title"><i class="ri-global-fill"></i> 블로그/참고 링크</div>
+      <div class="section-content">
+        <a href="https://devchannyp-github-io.pages.dev/" target="_blank" rel="noopener">👉 기술 블로그 바로가기</a> <br>
+        <a href="https://github.com/DevchannyP" target="_blank" rel="noopener">👉 GitHub 전체 프로젝트</a>
+      </div>
+    </section>
   </div>
   <script>
+    // ★ IntersectionObserver: fade-in-section 부드러운 등장
+    document.querySelectorAll('.fade-in-section').forEach((el, i) => {
+      let obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.disconnect();
+          }
+        }, { threshold: 0.08 }
+      );
+      setTimeout(()=>{obs.observe(el)}, 250+65*i); // 자연스런 순차 등장
+    });
+    // 다크모드
     const themeBtn = document.getElementById('theme-toggle');
     function setDarkMode(dark) {
       document.body.classList.toggle('dark', dark);
