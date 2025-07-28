@@ -54,7 +54,6 @@ permalink: /resume/
       padding: 0 12px;
       box-sizing: border-box;
     }
-    /* --- Toolbar (버튼 최상단, shadow, blur) --- */
     .resume-toolbar {
       display: flex; gap: 13px; justify-content: flex-end;
       position: sticky; top: 0; z-index: 100;
@@ -84,7 +83,6 @@ permalink: /resume/
     .toolbar-btn.theme.dark {
       background: #232c3c; color: #fff04a; border: 1.4px solid #4e5b6a;
     }
-    /* --- 프로필 카드 --- */
     .profile-card {
       background: linear-gradient(95deg, #fff 85%, #e9f1fb 100%);
       box-shadow: var(--shadow), 0 1.5px 10px #83b2f522;
@@ -120,7 +118,6 @@ permalink: /resume/
       box-shadow: 0 4px 45px #47b4ff66, 0 0 0 8px #90caff30, var(--shadow-neon);
       outline: none;
     }
-    /* 인증 체크 */
     .profile-cert {
       display: inline-flex; align-items: center;
       color: #2ecb89; background: #e4fcf0;
@@ -166,7 +163,6 @@ permalink: /resume/
     }
     .profile-contact a:focus, .profile-contact a:hover { color: #2361b3; text-decoration: underline;}
     .profile-contact i { margin-right: 4px; }
-    /* --- Section Fade-in 애니메이션 --- */
     @keyframes fadeInUp {
       0% { opacity:0; transform:translateY(40px);}
       60% { opacity:.84; transform:translateY(-4px);}
@@ -189,7 +185,6 @@ permalink: /resume/
       display: flex; align-items: center; gap: 8px;
       letter-spacing: -0.01em;
       line-height: 1.13;
-      /* subtle gradient line */
       border-bottom: 1.7px solid #eaf1fa;
       padding-bottom: 6px; margin-bottom: 21px;
     }
@@ -254,7 +249,6 @@ permalink: /resume/
       transition: background 0.16s, transform .16s;
     }
     .lang-badge:hover, .lang-badge:focus { background: #dbefff; transform: scale(1.07);}
-    /* 다크모드 */
     body.dark {
       background: #21222a; color: #f4f4f4;
     }
@@ -272,7 +266,6 @@ permalink: /resume/
     body.dark .info-table { background: #262c38; color: #f4f4f4;}
     body.dark .info-table th { background: #29304a; color: #fff04a;}
     body.dark .project-code { background: #1b202a; color: #fff04a;}
-    /* 반응형 */
     @media (max-width: 850px) {
       .resume-main { max-width: 99vw; }
       .profile-maininfo { padding: 33px 15px 27px 15px;}
@@ -328,21 +321,17 @@ permalink: /resume/
           <b>풀스택 E2E 구축/운영</b> 경험 다수.<br/>
           팀/개인 프로젝트에서 <b>문제해결·아키텍처 설계·코드리뷰</b>를 직접 주도.
         </div>
-<div class="profile-contact" style="margin-top:13px;">
-  <a href="https://devchanny.github.io" target="_blank" aria-label="블로그">
-    <i class="ri-global-line"></i>Blog
-  </a>
-  <a href="https://github.com/DevchannyP" target="_blank" aria-label="깃허브">
-    <i class="ri-github-fill"></i>GitHub
-  </a>
-  <a href="mailto:devchanny@gmail.com" aria-label="이메일">
-    <i class="ri-mail-line"></i>Email
-  </a>
-  <a href="tel:010-2959-8647" aria-label="전화번호">
-    <i class="ri-phone-line"></i>010-2959-8647
-  </a>
-</div>
-
+        <div class="profile-contact" style="margin-top:13px;">
+          <a href="https://devchanny.github.io" target="_blank" aria-label="블로그">
+            <i class="ri-global-line"></i>Blog
+          </a>
+          <a href="https://github.com/DevchannyP" target="_blank" aria-label="깃허브">
+            <i class="ri-github-fill"></i>GitHub
+          </a>
+          <a href="tel:010-2959-8647" aria-label="전화번호">
+            <i class="ri-phone-line"></i>010-2959-8647
+          </a>
+        </div>
       </div>
     </section>
 
@@ -356,20 +345,18 @@ permalink: /resume/
         <span class="skill-badge">React</span>
         <span class="skill-badge">TypeScript</span>
         <span class="skill-badge">MariaDB</span>
-        <span class="skill-badge">PostgreSQL</span>
         <span class="skill-badge">JPA</span>
         <span class="skill-badge">Redis</span>
         <span class="skill-badge">CI/CD</span>
         <span class="skill-badge">GitHub Actions</span>
         <span class="skill-badge">Docker</span>
-        <span class="skill-badge">Tailwind CSS</span>
       </div>
       <table class="info-table">
         <tr><th>분야</th><th>기술/툴</th><th>숙련도</th></tr>
         <tr><td>Backend</td><td>Spring Boot, JPA, QueryDSL, Redis</td><td>★★★★☆</td></tr>
-        <tr><td>Frontend</td><td>Next.js, React, TypeScript</td><td>★★★★☆</td></tr>
-        <tr><td>DB/Cache</td><td>MariaDB, PostgreSQL, Redis</td><td>★★★★☆</td></tr>
-        <tr><td>DevOps</td><td>Docker, AWS, GitHub Actions</td><td>★★★★☆</td></tr>
+        <tr><td>Frontend</td><td>Next.js, React, TypeScript</td><td>★★★☆☆</td></tr>
+        <tr><td>DB/Cache</td><td>MariaDB, Redis</td><td>★★★★☆</td></tr>
+        <tr><td>DevOps</td><td>Docker, AWS, GitHub Actions</td><td>★★★☆☆</td></tr>
       </table>
     </section>
 
@@ -391,7 +378,7 @@ permalink: /resume/
             - 정책·커뮤니티·지역정보 통합 풀스택 플랫폼 직접 설계/개발/배포<br>
             - JWT+Redis 인증/보안, SSR+CSR 성능 최적화, Fullpage Dashboard, ARIA/WCAG 접근성<br>
             - CI/CD + 코드리뷰 기반 실무 협업 환경 구현 (GitHub Actions)<br>
-            <b>Github:</b> <a href="https://github.com/DevchannyP/jibangyoung" target="_blank">jibangyoung</a>
+            <b>Github:</b> <a href="https://github.com/DevchannyP/JIBANGYOUNG" target="_blank">JIBANGYOUNG</a>
           </div>
           <span class="project-code"># Modular Monolith · DDD · SSR/CSR · Activity Event</span>
         </div>
@@ -407,7 +394,7 @@ permalink: /resume/
           <div class="project-desc">
             - 도메인 기반 DDD 구조, MSA 전환 고려한 모노리식 템플릿<br>
             - 도메인/폴더/네이밍 규칙 통일화로 실무 협업 최적화<br>
-            <b>Github:</b> <a href="https://github.com/DevchannyP/mono-modulith-project" target="_blank">mono-modulith-project</a>
+            <b>Github:</b> <a href="https://github.com/DevchannyP/MONO-MODULITH" target="_blank">MONO-MODULITH</a>
           </div>
           <span class="project-code"># DDD · Monorepo · Gradle/Kotlin DSL</span>
         </div>
@@ -429,6 +416,8 @@ permalink: /resume/
           <div class="project-desc">
             - 팀 프로젝트 (3인): JSP 기반 강의·멘토링·수강/관리·프로젝트 매칭 서비스<br>
             - ERD, UI, 요구정의서, 발표자료 등 산출물/설계 완비<br>
+            <b>Github:</b> <a href="https://github.com/DevchannyP/gda_jsp_project" target="_blank">gda_jsp_project</a>
+            <br>
             <b>시연 영상:</b> <a href="https://www.youtube.com/watch?v=dD76U35wdmM" target="_blank">YouTube</a>
           </div>
           <span class="project-code"># JSP · MVC · MySQL · 협업</span>
@@ -492,11 +481,19 @@ permalink: /resume/
       <div class="section-title"><i class="ri-certificate-fill"></i> 자격/어학</div>
       <div class="section-content">
         <table class="info-table">
-          <tr><th>자격명</th><th>합격일</th><th>발급기관</th></tr>
+          <tr>
+            <th>자격명</th>
+            <th>최종합격</th>
+            <th>발급기관</th>
+          </tr>
           <tr><td>정보처리산업기사</td><td>2025.06</td><td>한국산업인력공단</td></tr>
-          <tr><td>SQLD</td><td>2025.06</td><td>한국데이터진흥원</td></tr>
+          <tr><td>SQL 개발자(SQLD 자격)</td><td>2025.06</td><td>한국데이터베이스진흥센터</td></tr>
           <tr><td>소방안전관리자 1급</td><td>2019.01</td><td>한국소방안전협회</td></tr>
           <tr><td>컴퓨터활용능력 2급</td><td>2018.06</td><td>대한상공회의소</td></tr>
+          <tr><td>전산세무 2급</td><td>2014.06</td><td>대한상공회의소</td></tr>
+          <tr><td>증권투자상담사</td><td>2013.11</td><td>금융투자협회</td></tr>
+          <tr><td>정보기술자격(TQ) 한글엑셀 A등급</td><td>2013.01</td><td>한국생산성본부(KPC)</td></tr>
+          <tr><td>그래픽기술자격(GTQ) 2급</td><td>2012.08</td><td>한국생산성본부(KPC)</td></tr>
         </table>
         <div class="lang-badges" style="margin-top:8px;">
           <span class="lang-badge">한국어(Native)</span>
@@ -515,7 +512,6 @@ permalink: /resume/
     </section>
   </div>
   <script>
-    // (다크모드 토글 스크립트는 기존 코드 그대로 사용)
     const themeBtn = document.getElementById('theme-toggle');
     function setDarkMode(dark) {
       document.body.classList.toggle('dark', dark);
