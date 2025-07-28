@@ -347,6 +347,69 @@ permalink: /resume/
       box-shadow: 0 2px 7px #99dbfa66;
       opacity: 0.75;
     }
+
+    .profile-cert-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 13px;
+  padding: 4px 16px 4px 10px;
+  border-radius: 100px;
+  font-size: 1em;
+  font-weight: 700;
+  /* 👉 프로필카드와 동일한 배경(gradient) */
+  background: linear-gradient(95deg, #fff 85%, #e9f1fb 100%);
+  color: #237c52;
+  box-shadow: 0 2px 8px #b8d5ee0d, 0 1px 5px #c8e7ff09;
+  border: 1.2px solid #e4f0fa;
+  text-decoration: none;
+  gap: 8px;
+  transition: background .18s, box-shadow .18s, color .15s, transform .13s;
+  cursor: pointer;
+  position: relative;
+}
+.profile-cert-badge .cert-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf3ff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  box-shadow: 0 2px 8px #c9e7fd18;
+  color: #21bb87;
+  font-size: 1.18em;
+  border: 1.1px solid #ddefff;
+}
+.profile-cert-badge .cert-text {
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.profile-cert-badge:hover, .profile-cert-badge:focus {
+  background: linear-gradient(95deg, #e8f3ff 85%, #d3e5fb 100%);
+  color: #1d6b40;
+  box-shadow: 0 8px 30px #a6d9ff1c, 0 0 0 4px #b1e5ff22;
+  text-decoration: underline;
+  transform: translateY(-2px) scale(1.06);
+}
+body.dark .profile-cert-badge {
+  /* 프로필카드 다크모드 배경과 맞춤 */
+  background: #24273a;
+  color: #a3f1d6;
+  border: 1.2px solid #313d5c;
+  box-shadow: 0 2px 18px #171b2530;
+}
+body.dark .profile-cert-badge .cert-icon {
+  background: #31354a;
+  color: #51e1c0;
+  border: 1.1px solid #2e4a5e;
+}
+body.dark .profile-cert-badge:hover, body.dark .profile-cert-badge:focus {
+  background: #23233a;
+  color: #81ffe9;
+  box-shadow: 0 8px 30px #2be1aa33, 0 0 0 4px #1b7c6340;
+}
+
   </style>
 </head>
 <body>
@@ -374,12 +437,12 @@ permalink: /resume/
       <div class="profile-maininfo">
         <div class="profile-name profile-name-glow">
           박찬희 <span class="tossface" style="font-size:1.14em;">💙</span>
-          <span class="profile-cert" title="풀스택 과정 수료(구디 아카데미)">
-  <i class="ri-verified-badge-fill"></i> 풀스택 과정 수료
-  <a href="https://gudi.kr/" target="_blank" style="color:#2ecb89; text-decoration:underline; margin-left:4px;">
-    구디 아카데미
-  </a>
-</span>
+    <span class="profile-cert" title="풀스택 과정 수료(구디 아카데미)">
+      <i class="ri-verified-badge-fill"></i> 풀스택 과정 수료
+      <a href="https://gudi.kr/" target="_blank" style="color:#2ecb89; text-decoration:underline; margin-left:4px;">
+        구디 아카데미
+      </a>
+    </span>
         </div>
         <div class="profile-role">Fullstack Developer (Java/Spring · Next.js/React)</div>
         <div class="profile-summary">
