@@ -7,8 +7,8 @@ permalink: /resume/
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Devchanny Resume | Toss 스타일</title>
-  <meta name="description" content="박찬희 이력서 - 토스 감성 디자인" />
+  <title>Devchanny Resume | 토스 스타일 + 다크모드</title>
+  <meta name="description" content="박찬희 개발자 이력서 · 토스 감성 · 다운로드/다크모드/최적 UI/반응형" />
   <!-- Pretendard + Tossface + RemixIcon -->
   <link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
   <link href="https://unpkg.com/tossface/dist/tossface.css" rel="stylesheet">
@@ -18,6 +18,7 @@ permalink: /resume/
       --color-bg: #f9fafb;
       --color-card: #fff;
       --color-main: #3182f6;
+      --color-main-dark: #fff04a;
       --color-bluefade: #e9f1fb;
       --color-txt: #212325;
       --color-txt2: #4b5563;
@@ -27,6 +28,7 @@ permalink: /resume/
       --shadow2: 0 1px 9px 0 #c4d9fa24;
       --radius: 22px;
       --radius-card: 18px;
+      --color-accent: #3182f6;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -35,49 +37,53 @@ permalink: /resume/
       color: var(--color-txt);
       margin: 0; min-height: 100vh;
       letter-spacing: -0.02em;
+      transition: background 0.36s, color 0.24s;
     }
     .resume-main {
-      max-width: 820px;
-      margin: 54px auto 38px auto;
-      padding: 0 16px;
+      max-width: 830px;
+      margin: 44px auto 34px auto;
+      padding: 0 12px;
     }
     .profile-card {
       background: var(--color-card);
       box-shadow: var(--shadow);
       border-radius: var(--radius);
-      padding: 38px 36px 34px 36px;
+      padding: 44px 38px 36px 38px;
       display: flex;
       align-items: center;
-      gap: 34px;
-      margin-bottom: 36px;
+      gap: 38px;
+      margin-bottom: 38px;
+      position: relative;
     }
     .profile-img {
-      width: 120px; height: 120px; border-radius: 50%;
+      width: 124px; height: 124px; border-radius: 50%;
       background: var(--color-bluefade);
       object-fit: cover;
       border: 2.7px solid #cfe6fa;
       box-shadow: 0 2px 18px #aedbfd36;
       display: block;
+      transition: box-shadow .18s;
     }
     .profile-maininfo {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 8px;
     }
     .profile-name {
-      font-size: 2.1em; font-weight: 800; color: var(--color-main); margin-bottom: 2px;
-      display: flex; align-items: center; gap: 9px;
+      font-size: 2.22em; font-weight: 900; color: var(--color-main); margin-bottom: 2px;
+      display: flex; align-items: center; gap: 12px; letter-spacing: -0.6px;
     }
     .profile-role {
-      font-size: 1.14em; font-weight: 600; color: var(--color-txt2);
+      font-size: 1.13em; font-weight: 600; color: var(--color-txt2);
+      margin-bottom: 3px;
     }
     .profile-summary {
-      font-size: 1.02em; margin-top: 6px; color: #3a3b3d;
-      line-height: 1.54;
+      font-size: 1.03em; color: #3a3b3d;
+      line-height: 1.54; margin-top: 5px;
     }
     .profile-contact {
-      margin-top: 18px;
+      margin-top: 17px;
       display: flex; gap: 17px; flex-wrap: wrap;
       font-size: 1.01em;
     }
@@ -87,59 +93,55 @@ permalink: /resume/
       background: var(--color-card);
       border-radius: var(--radius-card);
       box-shadow: var(--shadow2);
-      padding: 26px 30px 17px 30px;
-      margin-bottom: 28px;
+      padding: 26px 32px 18px 32px;
+      margin-bottom: 26px;
+      transition: background .28s;
     }
     .section-title {
       font-size: 1.19em; font-weight: 700;
       margin-bottom: 18px;
       color: var(--color-main);
+      display: flex; align-items: center; gap: 8px;
       letter-spacing: -0.01em;
-      display: flex; align-items: center; gap: 6px;
     }
     .skill-badges {
-      display: flex; flex-wrap: wrap; gap: 9px 11px; margin-bottom: 5px;
+      display: flex; flex-wrap: wrap; gap: 10px 14px; margin-bottom: 7px;
     }
     .skill-badge {
       background: var(--color-skill); color: #296fc9;
-      border-radius: 8px; padding: 5px 13px;
-      font-size: 1em; font-weight: 600;
-      box-shadow: 0 1px 6px #d0eaff45;
+      border-radius: 8px; padding: 6px 15px;
+      font-size: 1.02em; font-weight: 600;
+      box-shadow: 0 1px 7px #d0eaff45;
       transition: background 0.18s;
     }
-    .section-content { font-size: 1.02em; color: var(--color-txt2);}
+    .section-content { font-size: 1.03em; color: var(--color-txt2);}
     .projects-timeline { margin: 0; padding: 0;}
     .project-item {
-      margin-bottom: 20px;
-      padding-left: 9px;
-      border-left: 3.1px solid var(--color-main);
+      margin-bottom: 23px;
+      padding-left: 12px;
+      border-left: 3px solid var(--color-main);
       position: relative;
     }
-    .project-item:last-child { margin-bottom: 2px; }
     .project-date {
       font-size: 0.97em; color: #86a2c8; margin-bottom: 2px;
     }
     .project-title {
-      font-weight: 700; font-size: 1.08em; margin-bottom: 1.5px; color: #225bb8;
-      display: flex; align-items: center; gap: 6px;
+      font-weight: 700; font-size: 1.08em; color: #225bb8; margin-bottom: 2px;
+      display: flex; align-items: center; gap: 7px;
     }
     .project-desc {
       font-size: 1.01em; color: #3b4454; margin-bottom: 2.5px;
       line-height: 1.5;
     }
-    .project-skills {
-      margin-bottom: 2px; display: flex; gap: 5px;
-    }
+    .project-skills { margin-bottom: 2px; display: flex; gap: 6px; }
     .project-code {
       background: #f6faff; color: #225bb8; font-family: 'Fira Mono',monospace;
       border-radius: 5px; font-size: 0.97em; padding: 2.5px 9px;
       margin-bottom: 1.5px; display: inline-block;
     }
-    /* 표, 자격, 언어, 경력, 연락처 등 */
     .info-table {
       width: 100%; border-collapse: collapse; margin-bottom: 10px;
-      background: #f9fafb;
-      font-size: 1.01em;
+      background: #f9fafb; font-size: 1.01em;
     }
     .info-table th, .info-table td {
       text-align: left; padding: 8.5px 8px; border-bottom: 1px solid #e8eefa;
@@ -147,35 +149,56 @@ permalink: /resume/
     .info-table th { color: #569df5; font-weight: 600; background: #f4f8ff;}
     .lang-badges { display: flex; gap: 9px; margin-top: 2px;}
     .lang-badge { background: #e3ecfa; color: #225bb8; padding: 3px 13px; border-radius: 9px; font-size: 0.98em;}
-    /* 인쇄/PDF 버튼 */
+    /* 다운로드/테마 토글 */
     .resume-toolbar {
-      display: flex; gap: 10px; justify-content: flex-end;
-      margin-bottom: -28px; margin-top: 3px;
+      display: flex; gap: 9px; justify-content: flex-end;
+      margin-bottom: -28px; margin-top: 4px;
     }
     .toolbar-btn {
       background: var(--color-main); color: #fff;
       border: none; border-radius: 19px;
-      padding: 8px 22px;
+      padding: 8px 21px;
       font-size: 1em; font-weight: 600;
       box-shadow: 0 2px 8px #aedbfd36;
-      cursor: pointer; transition: background 0.13s;
+      cursor: pointer; transition: background 0.15s;
       outline: none;
+      display: flex; align-items: center; gap: 6px;
     }
     .toolbar-btn:active { background: #2357a6;}
+    .toolbar-btn.theme {
+      background: #dbefff; color: var(--color-main); border: 1px solid #8ecbfa;
+      font-weight: 700;
+    }
+    .toolbar-btn.theme.dark {
+      background: #2a2f3a; color: #fff04a; border: 1px solid #5b5d68;
+    }
+    /* 다크모드 */
+    body.dark {
+      background: #23272f; color: #f4f4f4;
+    }
+    body.dark .profile-card, body.dark .skills-card, body.dark .section-card {
+      background: #23232a;
+      color: #f4f4f4;
+    }
+    body.dark .section-title { color: var(--color-main-dark); }
+    body.dark .skill-badge, body.dark .lang-badge { background: #333c55; color: #e6f0ff;}
+    body.dark .info-table { background: #222334; color: #f4f4f4;}
+    body.dark .info-table th { background: #292a33; color: #fff04a;}
+    body.dark .project-code { background: #282a36; color: #fff04a;}
+    /* 반응형 */
     @media (max-width: 700px) {
-      .resume-main { padding: 0 3vw;}
-      .profile-card, .skills-card, .section-card { padding: 22px 7vw 17px 7vw;}
+      .resume-main { padding: 0 2vw;}
+      .profile-card, .skills-card, .section-card { padding: 21px 5vw 13px 5vw;}
     }
     @media (max-width: 540px) {
-      .profile-card { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .profile-card { flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px 2vw 14px 2vw;}
       .profile-img { width: 86px; height: 86px;}
-      .resume-main { margin: 17px auto;}
+      .resume-main { margin: 10px auto;}
     }
     @media print {
       body { background: #fff; }
       .toolbar-btn, .resume-toolbar { display: none !important; }
-      .resume-main { box-shadow: none; }
-      .profile-card, .skills-card, .section-card { box-shadow: none; }
+      .resume-main, .profile-card, .skills-card, .section-card { box-shadow: none; }
     }
   </style>
 </head>
@@ -183,29 +206,40 @@ permalink: /resume/
   <div class="resume-main" id="resume">
     <div class="resume-toolbar">
       <button class="toolbar-btn" onclick="window.print()" aria-label="PDF로 저장">
-        <i class="ri-download-2-line"></i> PDF로 저장
+        <i class="ri-download-2-line"></i> PDF/Paper 저장
+      </button>
+      <button class="toolbar-btn theme" id="theme-toggle" aria-label="다크모드 토글">
+        <i class="ri-moon-line"></i> 다크모드
       </button>
     </div>
     <!-- 프로필(상단) -->
-    <section class="profile-card">
-      <img src="/assets/img/converted_image.webp" alt="Devchanny 프로필 이미지" class="profile-img" loading="eager">
-      <div class="profile-maininfo">
-        <div class="profile-name">
-          박찬희 <span class="tossface">💙</span>
-        </div>
-        <div class="profile-role">Backend · Fullstack Developer</div>
-        <div class="profile-summary">
-          실전 설계와 자동화, 문제해결에 강점.<br/>
-          설계/개발/배포/문서화 등 프로젝트의 <b>End-to-End</b> 경험 다수.<br/>
-          빠른 성장/적응, 팀워크·코드리뷰·아키텍처 문서화 모두 직접 리딩.
-        </div>
-        <div class="profile-contact" style="margin-top:13px;">
-          <a href="https://devchanny.github.io" target="_blank" aria-label="블로그"><i class="ri-global-line"></i>Blog</a>
-          <a href="https://github.com/DevchannyP" target="_blank" aria-label="깃허브"><i class="ri-github-fill"></i>GitHub</a>
-          <a href="mailto:devchanny@gmail.com" aria-label="이메일"><i class="ri-mail-line"></i>Email</a>
-        </div>
-      </div>
-    </section>
+<!-- 프로필(상단) -->
+<section class="profile-card">
+  <img
+    src="/assets/img/converted_image.webp"
+    alt="Devchanny 프로필 이미지"
+    class="profile-img"
+    loading="eager"
+    width="120"
+    height="120"
+  />
+  <div class="profile-maininfo">
+    <div class="profile-name">
+      박찬희 <span class="tossface">💙</span>
+    </div>
+    <div class="profile-role">Backend · Fullstack Developer</div>
+    <div class="profile-summary">
+      실전 설계와 자동화, 문제해결에 강점.<br/>
+      설계/개발/배포/문서화 등 프로젝트의 <b>End-to-End</b> 경험 다수.<br/>
+      빠른 성장/적응, 팀워크·코드리뷰·아키텍처 문서화 모두 직접 리딩.
+    </div>
+    <div class="profile-contact" style="margin-top:13px;">
+      <a href="https://devchanny.github.io" target="_blank" aria-label="블로그"><i class="ri-global-line"></i>Blog</a>
+      <a href="https://github.com/DevchannyP" target="_blank" aria-label="깃허브"><i class="ri-github-fill"></i>GitHub</a>
+      <a href="mailto:devchanny@gmail.com" aria-label="이메일"><i class="ri-mail-line"></i>Email</a>
+    </div>
+  </div>
+</section>
 
     <!-- 스킬 -->
     <section class="skills-card">
@@ -231,7 +265,6 @@ permalink: /resume/
         <tr><td>DevOps</td><td>Docker, AWS, Github Actions</td><td>★★★★☆</td></tr>
       </table>
     </section>
-
     <!-- 프로젝트/경력 -->
     <section class="section-card">
       <div class="section-title"><i class="ri-medal-2-fill"></i> 주요 프로젝트/성과</div>
@@ -262,7 +295,6 @@ permalink: /resume/
         </div>
       </div>
     </section>
-
     <!-- 경력 -->
     <section class="section-card">
       <div class="section-title"><i class="ri-briefcase-5-fill"></i> 경력사항</div>
@@ -272,7 +304,6 @@ permalink: /resume/
         <tr><td>2023.12~현재</td><td>프리랜서/협력</td><td>지방청년 프로젝트 등 Fullstack 리딩/설계</td></tr>
       </table>
     </section>
-
     <!-- 자격/언어 -->
     <section class="section-card">
       <div class="section-title"><i class="ri-certificate-fill"></i> 자격/언어</div>
@@ -289,5 +320,24 @@ permalink: /resume/
       </div>
     </section>
   </div>
+  <script>
+    // 다크모드 토글 & localStorage 저장
+    const themeBtn = document.getElementById('theme-toggle');
+    function setDarkMode(dark) {
+      document.body.classList.toggle('dark', dark);
+      themeBtn.innerHTML = dark
+        ? '<i class="ri-sun-line"></i> 라이트모드'
+        : '<i class="ri-moon-line"></i> 다크모드';
+      themeBtn.classList.toggle('dark', dark);
+      localStorage.setItem('resume-darkmode', dark ? '1' : '0');
+    }
+    // 최초 설정
+    (() => {
+      const isDark = localStorage.getItem('resume-darkmode') === '1'
+        || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      setDarkMode(isDark);
+    })();
+    themeBtn.onclick = () => setDarkMode(!document.body.classList.contains('dark'));
+  </script>
 </body>
 </html>
