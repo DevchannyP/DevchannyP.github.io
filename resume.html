@@ -2,57 +2,193 @@
 layout: none
 permalink: /resume/
 ---
-
-
----
-layout: none
-permalink: /resume/
----
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Devchanny Resume & Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>박찬희 Resume & Portfolio</title>
+  <meta name="description" content="박찬희 | Devchanny 개발자 이력서 · 포트폴리오" />
+  <!-- Pretendard 폰트, 아이콘 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <style>
-    body { background: #fffbe7; color: #232425; font-family: 'Pretendard',sans-serif; margin: 0; }
-    .container { max-width: 760px; margin: 38px auto; background: #fff; border-radius: 18px; box-shadow: 0 2px 18px #f8ca0035; padding: 48px 36px; }
-    h1 { color: #e0a800; font-size: 2.3em; margin-bottom: 10px;}
-    h2 { margin-top: 38px; color: #444;}
-    .skill-badge { background: #ffe066; color: #565200; border-radius: 7px; padding: 2px 10px; margin-right: 6px; font-size: 0.98em;}
-    table { width: 100%; border-collapse: collapse; margin: 20px 0;}
-    td, th { border: 1px solid #ffe099; padding: 9px; font-size: 1em;}
-    .section { margin-top: 28px; }
-    a { color: #1769aa; }
-    .contact { margin-top: 26px; }
-    @media (max-width: 600px) {
-      .container { padding: 20px 6px; }
+    :root {
+      --color-main: #ffd900;
+      --color-bg: #fffbe8;
+      --color-txt: #232425;
+      --color-sec: #fcf3b0;
+      --color-badge: #ffec99;
+      --color-skill: #e0a800;
+      --color-darkbg: #23272f;
+      --color-darktxt: #f4f4f4;
+      --color-darkbadge: #37393c;
+      --shadow: 0 2px 24px 0 #ffed993a;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--color-bg);
+      color: var(--color-txt);
+      transition: background 0.4s, color 0.3s;
+      min-height: 100vh;
+    }
+    .dark {
+      background: var(--color-darkbg);
+      color: var(--color-darktxt);
+    }
+    .resume-wrap {
+      max-width: 830px;
+      margin: 44px auto 40px auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 46px 40px 34px 40px;
+      position: relative;
+      transition: background 0.4s;
+    }
+    .dark .resume-wrap { background: #23272f; }
+    h1 {
+      color: var(--color-main);
+      margin-top: 0;
+      font-size: 2.45em;
+      font-weight: 900;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+      line-height: 1.17;
+    }
+    h2 { font-size: 1.27em; color: #454545; margin-top: 40px; margin-bottom: 15px; }
+    .dark h2 { color: #ffe066; }
+    .badge {
+      background: var(--color-badge);
+      color: #6a5200;
+      border-radius: 6px;
+      padding: 2.5px 11px;
+      font-size: 0.97em;
+      margin-right: 6px;
+      font-weight: 500;
+      vertical-align: 1px;
+      display: inline-block;
+      margin-bottom: 4px;
+      box-shadow: 0 2px 8px #fffad8c0;
+    }
+    .dark .badge {
+      background: var(--color-darkbadge);
+      color: #ffe066;
+      box-shadow: none;
+    }
+    .skill-list {
+      margin-bottom: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 9px;
+    }
+    .summary-list li {
+      margin-bottom: 2px;
+    }
+    /* 프로젝트 타임라인 */
+    .timeline {
+      border-left: 2.2px solid var(--color-main);
+      margin-left: 3px;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .timeline-item {
+      margin-bottom: 22px;
+      position: relative;
+      padding-left: 3px;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -14px;
+      top: 5px;
+      width: 12px; height: 12px;
+      border-radius: 99px;
+      background: var(--color-main);
+      border: 2px solid #fff;
+      box-shadow: 0 1px 6px #ffd80030;
+    }
+    .timeline-date { color: #868686; font-size: 0.97em; margin-bottom: 1px; }
+    .timeline-title { font-weight: bold; font-size: 1.05em; }
+    .timeline-desc { font-size: 0.98em; margin-bottom: 3px; }
+    .timeline-skills { margin-bottom: 2px; }
+    .download-btn, .theme-btn {
+      position: absolute; top: 17px; right: 28px;
+      background: var(--color-main);
+      color: #444;
+      border: none;
+      border-radius: 22px;
+      padding: 8px 22px;
+      font-size: 1em;
+      font-weight: bold;
+      box-shadow: 0 2px 8px #ffefb0a7;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.18s, color 0.17s;
+    }
+    .theme-btn { right: 170px; background: #b3a102; color: #fff; }
+    .dark .download-btn { background: #27292e; color: #ffe066; box-shadow: none;}
+    .dark .theme-btn { background: #44453c; color: #ffed53;}
+    table {
+      width: 100%; border-collapse: collapse; margin: 16px 0;
+      background: var(--color-sec);
+      font-size: 0.98em;
+      border-radius: 7px;
+      overflow: hidden;
+    }
+    th, td { padding: 9px 7px; border-bottom: 1px solid #f4e9bb; text-align: left;}
+    th { background: #fffbe8; color: #967900; font-weight: 600; }
+    .dark table { background: #27282f; }
+    .dark th { background: #35353b; color: #ffe066;}
+    /* 기타 UI */
+    .contact-list, .lang-list { display: flex; gap: 12px; flex-wrap: wrap;}
+    .contact-list a { color: #1769aa; font-weight: 500; text-decoration: none;}
+    .contact-list i { margin-right: 4px; }
+    .lang-list { margin-top: 2px;}
+    .lang-badge { background: #e2e2e9; color: #232425; padding: 2.5px 12px; border-radius: 7px; font-size: 0.98em;}
+    .dark .lang-badge { background: #36373b; color: #ffe066; }
+    .section { margin-top: 34px;}
+    code, pre { background: #faf1d6; border-radius: 5px; font-size: 0.98em; padding: 2px 6px;}
+    .dark code, .dark pre { background: #36373b; color: #ffd800;}
+    @media (max-width: 800px) {
+      .resume-wrap { padding: 28px 7px;}
+    }
+    @media (max-width: 530px) {
+      h1 { font-size: 1.3em;}
+      .resume-wrap { padding: 5vw 1vw; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🚀 Devchanny Resume & Portfolio</h1>
-    <p><span class="skill-badge">Java</span>
-       <span class="skill-badge">Spring Boot</span>
-       <span class="skill-badge">Next.js</span>
-       <span class="skill-badge">React</span>
-       <span class="skill-badge">MariaDB</span>
-       <span class="skill-badge">AWS</span>
-       <span class="skill-badge">CI/CD</span></p>
-
-    <h2>Summary</h2>
-    <ul>
-      <li><b>이름</b>: 박찬희 (Devchanny)</li>
-      <li><b>포지션</b>: Backend / Fullstack Developer</li>
-      <li><b>강점</b>: 설계, 자동화, 코드리뷰, 협업/문서화</li>
-      <li><b>설명</b>: 실전 아키텍처와 문제 해결에 강한 개발자</li>
+  <div class="resume-wrap" id="resume">
+    <button class="download-btn" onclick="window.print()" aria-label="PDF로 다운로드"><i class="ri-download-2-line"></i> PDF로 저장</button>
+    <button class="theme-btn" id="theme-toggle" aria-label="다크모드 토글"><i class="ri-moon-line"></i></button>
+    <h1>🚀 박찬희 Resume & Portfolio</h1>
+    <div class="skill-list">
+      <span class="badge">Java</span>
+      <span class="badge">Spring Boot</span>
+      <span class="badge">Next.js</span>
+      <span class="badge">React</span>
+      <span class="badge">MariaDB</span>
+      <span class="badge">AWS</span>
+      <span class="badge">CI/CD</span>
+      <span class="badge">JPA</span>
+      <span class="badge">TypeScript</span>
+    </div>
+    <ul class="summary-list">
+      <li><b>이름</b> : 박찬희 (Devchanny)</li>
+      <li><b>포지션</b> : Backend / Fullstack Developer</li>
+      <li><b>핵심역량</b> : 아키텍처, 자동화, 코드리뷰, 협업/문서화</li>
+      <li><b>소개</b> : 실전 설계와 문제 해결에 강한 개발자. 배움과 성장 중심의 마인드로 빠른 적응과 고도화 경험 다수.</li>
     </ul>
 
     <div class="section">
       <h2>Skills</h2>
       <table>
-        <tr><th>영역</th><th>기술/툴</th><th>숙련도</th></tr>
+        <tr><th>분야</th><th>기술스택</th><th>숙련도</th></tr>
         <tr><td>Backend</td><td>Spring Boot, JPA, Node.js</td><td>★★★★☆</td></tr>
         <tr><td>Frontend</td><td>React, Next.js, TypeScript</td><td>★★★★☆</td></tr>
         <tr><td>DB/Cache</td><td>MariaDB, PostgreSQL, Redis</td><td>★★★★☆</td></tr>
@@ -61,15 +197,22 @@ permalink: /resume/
     </div>
 
     <div class="section">
-      <h2>Projects</h2>
-      <b>지방청년 플랫폼</b> <span class="skill-badge">Spring Boot</span>
-      <span class="skill-badge">Next.js</span>
-      <span class="skill-badge">MariaDB</span>
-      <ul>
-        <li>2024.03 ~ 2025.07 / Fullstack 설계·개발·인프라 자동화</li>
-        <li>사용자 인증, 정책추천, 마이페이지, 대시보드 등 핵심 주도 구현</li>
-      </ul>
-      <pre><code>CREATE TABLE user_activity_event (
+      <h2>프로젝트/성과</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2024.03 ~ 2025.07</div>
+          <div class="timeline-title">지방청년 플랫폼 <span class="badge">Fullstack</span></div>
+          <div class="timeline-skills">
+            <span class="badge">Spring Boot</span>
+            <span class="badge">Next.js</span>
+            <span class="badge">MariaDB</span>
+          </div>
+          <div class="timeline-desc">
+            - 설계/개발/인프라 자동화<br/>
+            - 사용자 인증, 정책추천, 마이페이지, 대시보드 등 주도 구현<br/>
+            - DevOps 환경 자동화, 정책 점수 집계/추천 알고리즘
+          </div>
+          <pre><code>CREATE TABLE user_activity_event (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
   user_id BIGINT NOT NULL,
   region_id BIGINT NOT NULL,
@@ -77,17 +220,22 @@ permalink: /resume/
   score_delta INT DEFAULT 0,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );</code></pre>
-      <b>Devfolio (OpenSource/Side)</b>
-      <ul>
-        <li>Notion 기반 이력서/블로그 정적 생성, Github Actions 자동배포</li>
-        <li>API/컴포넌트 기반 포트폴리오 템플릿</li>
-      </ul>
-      <pre><code>git clone https://github.com/DevchannyP/markdown-resume-template.git
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2023.08 ~ 현재</div>
+          <div class="timeline-title">Devfolio (OSS) <span class="badge">포트폴리오 자동화</span></div>
+          <div class="timeline-desc">
+            - Notion 기반 이력서/블로그 자동 생성<br/>
+            - Github Actions로 정적 배포, 컴포넌트 기반 템플릿
+          </div>
+          <pre><code>git clone https://github.com/DevchannyP/markdown-resume-template.git
 npm run build</code></pre>
+        </div>
+      </div>
     </div>
 
     <div class="section">
-      <h2>Experience</h2>
+      <h2>경력사항</h2>
       <table>
         <tr><th>기간</th><th>소속/프로젝트</th><th>역할/성과</th></tr>
         <tr><td>2022.03~2023.12</td><td>㈜굿코드랩</td><td>플랫폼/백엔드/DevOps 개발, R&D</td></tr>
@@ -96,13 +244,40 @@ npm run build</code></pre>
     </div>
 
     <div class="section">
-      <h2>Contact</h2>
+      <h2>자격/교육</h2>
       <ul>
-        <li><b>Blog:</b> <a href="https://devchanny.github.io">devchanny.github.io</a></li>
-        <li><b>GitHub:</b> <a href="https://github.com/DevchannyP">github.com/DevchannyP</a></li>
-        <li><b>Email:</b> devchanny@gmail.com</li>
+        <li>정보처리기사 (2023)</li>
+        <li>SQLD (2024)</li>
+        <li>컴퓨터공학(학사) 졸업</li>
       </ul>
     </div>
+
+    <div class="section">
+      <h2>언어</h2>
+      <div class="lang-list">
+        <span class="lang-badge">한국어(Native)</span>
+        <span class="lang-badge">영어(업무/문서)</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <div class="contact-list">
+        <a href="https://devchanny.github.io" target="_blank"><i class="ri-global-line"></i>Blog</a>
+        <a href="https://github.com/DevchannyP" target="_blank"><i class="ri-github-fill"></i>GitHub</a>
+        <a href="mailto:devchanny@gmail.com"><i class="ri-mail-line"></i>Email</a>
+      </div>
+    </div>
   </div>
+  <script>
+    // 다크모드 토글
+    const btn = document.getElementById('theme-toggle');
+    btn.onclick = function() {
+      document.body.classList.toggle('dark');
+      btn.innerHTML = document.body.classList.contains('dark')
+        ? '<i class="ri-sun-line"></i>'
+        : '<i class="ri-moon-line"></i>';
+    };
+  </script>
 </body>
 </html>
