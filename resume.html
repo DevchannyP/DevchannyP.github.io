@@ -1,16 +1,108 @@
 ---
-layout: default
-title: "Resume | 박찬희"
+layout: none
 permalink: /resume/
 ---
 
 
-# 🚀 Devchanny Resume
+---
+layout: none
+permalink: /resume/
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Devchanny Resume & Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { background: #fffbe7; color: #232425; font-family: 'Pretendard',sans-serif; margin: 0; }
+    .container { max-width: 760px; margin: 38px auto; background: #fff; border-radius: 18px; box-shadow: 0 2px 18px #f8ca0035; padding: 48px 36px; }
+    h1 { color: #e0a800; font-size: 2.3em; margin-bottom: 10px;}
+    h2 { margin-top: 38px; color: #444;}
+    .skill-badge { background: #ffe066; color: #565200; border-radius: 7px; padding: 2px 10px; margin-right: 6px; font-size: 0.98em;}
+    table { width: 100%; border-collapse: collapse; margin: 20px 0;}
+    td, th { border: 1px solid #ffe099; padding: 9px; font-size: 1em;}
+    .section { margin-top: 28px; }
+    a { color: #1769aa; }
+    .contact { margin-top: 26px; }
+    @media (max-width: 600px) {
+      .container { padding: 20px 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Devchanny Resume & Portfolio</h1>
+    <p><span class="skill-badge">Java</span>
+       <span class="skill-badge">Spring Boot</span>
+       <span class="skill-badge">Next.js</span>
+       <span class="skill-badge">React</span>
+       <span class="skill-badge">MariaDB</span>
+       <span class="skill-badge">AWS</span>
+       <span class="skill-badge">CI/CD</span></p>
 
-> 백엔드/풀스택 개발자 박찬희입니다.
+    <h2>Summary</h2>
+    <ul>
+      <li><b>이름</b>: 박찬희 (Devchanny)</li>
+      <li><b>포지션</b>: Backend / Fullstack Developer</li>
+      <li><b>강점</b>: 설계, 자동화, 코드리뷰, 협업/문서화</li>
+      <li><b>설명</b>: 실전 아키텍처와 문제 해결에 강한 개발자</li>
+    </ul>
 
-## Summary
+    <div class="section">
+      <h2>Skills</h2>
+      <table>
+        <tr><th>영역</th><th>기술/툴</th><th>숙련도</th></tr>
+        <tr><td>Backend</td><td>Spring Boot, JPA, Node.js</td><td>★★★★☆</td></tr>
+        <tr><td>Frontend</td><td>React, Next.js, TypeScript</td><td>★★★★☆</td></tr>
+        <tr><td>DB/Cache</td><td>MariaDB, PostgreSQL, Redis</td><td>★★★★☆</td></tr>
+        <tr><td>DevOps</td><td>Docker, AWS, Github Actions</td><td>★★★★☆</td></tr>
+      </table>
+    </div>
 
-```yaml
-이름: 박찬희
-경력: Backend/Fullstack
+    <div class="section">
+      <h2>Projects</h2>
+      <b>지방청년 플랫폼</b> <span class="skill-badge">Spring Boot</span>
+      <span class="skill-badge">Next.js</span>
+      <span class="skill-badge">MariaDB</span>
+      <ul>
+        <li>2024.03 ~ 2025.07 / Fullstack 설계·개발·인프라 자동화</li>
+        <li>사용자 인증, 정책추천, 마이페이지, 대시보드 등 핵심 주도 구현</li>
+      </ul>
+      <pre><code>CREATE TABLE user_activity_event (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  region_id BIGINT NOT NULL,
+  action_type ENUM('POST','COMMENT','POLICY_LIKE','REPORT','LOGIN','SYSTEM'),
+  score_delta INT DEFAULT 0,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);</code></pre>
+      <b>Devfolio (OpenSource/Side)</b>
+      <ul>
+        <li>Notion 기반 이력서/블로그 정적 생성, Github Actions 자동배포</li>
+        <li>API/컴포넌트 기반 포트폴리오 템플릿</li>
+      </ul>
+      <pre><code>git clone https://github.com/DevchannyP/markdown-resume-template.git
+npm run build</code></pre>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <table>
+        <tr><th>기간</th><th>소속/프로젝트</th><th>역할/성과</th></tr>
+        <tr><td>2022.03~2023.12</td><td>㈜굿코드랩</td><td>플랫폼/백엔드/DevOps 개발, R&D</td></tr>
+        <tr><td>2023.12~현재</td><td>프리랜서/협력</td><td>지방청년 프로젝트 등 Fullstack 리딩/설계</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <ul>
+        <li><b>Blog:</b> <a href="https://devchanny.github.io">devchanny.github.io</a></li>
+        <li><b>GitHub:</b> <a href="https://github.com/DevchannyP">github.com/DevchannyP</a></li>
+        <li><b>Email:</b> devchanny@gmail.com</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
