@@ -7,28 +7,33 @@ permalink: /resume/
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Devchanny Resume | 토스 스타일 + 다크모드</title>
-  <meta name="description" content="박찬희 개발자 이력서 · 토스 감성 · 다운로드/다크모드/최적 UI/반응형" />
-  <!-- Pretendard + Tossface + RemixIcon -->
+  <title>Devchanny Resume | 토스 스타일 프리미엄</title>
+  <meta name="description" content="박찬희 개발자 이력서 · 프리미엄 토스 감성, 모던/입체 디자인" />
   <link href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
   <link href="https://unpkg.com/tossface/dist/tossface.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <style>
     :root {
-      --color-bg: #f9fafb;
+      --color-bg: #f9fbff;
       --color-card: #fff;
       --color-main: #3182f6;
-      --color-main-dark: #fff04a;
+      --color-main-soft: #eaf3ff;
       --color-bluefade: #e9f1fb;
       --color-txt: #212325;
-      --color-txt2: #4b5563;
-      --color-section: #f4f7fb;
+      --color-txt2: #60697a;
+      --color-point: #166bff;
+      --color-section: #f7fafd;
+      --color-section2: #f4f8fd;
       --color-skill: #ecf3fc;
-      --shadow: 0 4px 24px 0 #3e9af50c;
-      --shadow2: 0 1px 9px 0 #c4d9fa24;
-      --radius: 22px;
+      --color-accent: #67a8fc;
+      --color-yellow: #fff2b3;
+      --color-green: #edfff5;
+      --color-orange: #ffefdf;
+      --shadow: 0 4px 32px 0 #2263e322;
+      --shadow2: 0 1px 11px 0 #d3e9fa38;
+      --shadow-neon: 0 0 0 4px #6fc1ff1c;
+      --radius: 26px;
       --radius-card: 18px;
-      --color-accent: #3182f6;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -37,163 +42,220 @@ permalink: /resume/
       color: var(--color-txt);
       margin: 0; min-height: 100vh;
       letter-spacing: -0.02em;
+      font-size: 1.05em;
       transition: background 0.36s, color 0.24s;
     }
     .resume-main {
-      max-width: 830px;
-      margin: 44px auto 34px auto;
+      max-width: 900px;
+      margin: 48px auto 34px auto;
       padding: 0 12px;
+      box-sizing: border-box;
     }
     .profile-card {
-      background: var(--color-card);
-      box-shadow: var(--shadow);
+      background: linear-gradient(95deg, #fff 85%, #e9f1fb 100%);
+      box-shadow: var(--shadow), 0 1.5px 10px #83b2f522;
       border-radius: var(--radius);
-      padding: 44px 38px 36px 38px;
+      padding: 0 0 0 0;
+      margin-bottom: 42px;
       display: flex;
-      align-items: center;
-      gap: 38px;
-      margin-bottom: 38px;
+      gap: 0;
+      align-items: stretch;
+      position: relative;
+      overflow: hidden;
+      min-height: 198px;
+    }
+    .profile-img-wrap {
+      min-width: 210px; max-width: 240px;
+      background: linear-gradient(200deg, #f6fbff 60%, #e3eefa 100%);
+      display: flex; align-items: center; justify-content: center;
+      border-right: 1.7px solid #edf2fb;
+      box-shadow: 0 0 0 0 #fff;
       position: relative;
     }
     .profile-img {
-      width: 124px; height: 124px; border-radius: 50%;
+      width: 120px; height: 120px; border-radius: 50%;
       background: var(--color-bluefade);
       object-fit: cover;
-      border: 2.7px solid #cfe6fa;
-      box-shadow: 0 2px 18px #aedbfd36;
+      border: 3.1px solid #e0eeff;
+      box-shadow: 0 4px 32px #9acffd28, 0 0 0 7px #e3f1fc;
       display: block;
+      margin: 0 auto;
       transition: box-shadow .18s;
+    }
+    .profile-img:focus, .profile-img:hover {
+      box-shadow: 0 4px 45px #47b4ff66, 0 0 0 8px #90caff30, var(--shadow-neon);
+      outline: none;
     }
     .profile-maininfo {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      justify-content: center;
+      padding: 40px 38px 35px 35px;
+      gap: 7px;
+      min-width: 0;
     }
     .profile-name {
-      font-size: 2.22em; font-weight: 900; color: var(--color-main); margin-bottom: 2px;
-      display: flex; align-items: center; gap: 12px; letter-spacing: -0.6px;
+      font-size: 2.3em; font-weight: 900; color: var(--color-main); margin-bottom: 3px;
+      display: flex; align-items: center; gap: 10px; letter-spacing: -1.5px;
+      line-height: 1.1;
+      text-shadow: 0 2px 8px #a8cbff15;
     }
     .profile-role {
-      font-size: 1.13em; font-weight: 600; color: var(--color-txt2);
-      margin-bottom: 3px;
+      font-size: 1.13em; font-weight: 600; color: #5180ad;
+      margin-bottom: 7px; letter-spacing: -0.3px;
     }
     .profile-summary {
-      font-size: 1.03em; color: #3a3b3d;
-      line-height: 1.54; margin-top: 5px;
+      font-size: 1.04em; color: #3a3b3d;
+      line-height: 1.65; margin-top: 8px;
     }
     .profile-contact {
-      margin-top: 17px;
-      display: flex; gap: 17px; flex-wrap: wrap;
-      font-size: 1.01em;
+      margin-top: 22px;
+      display: flex; gap: 18px; flex-wrap: wrap;
+      font-size: 1.04em; align-items: center;
     }
-    .profile-contact a { color: var(--color-main); font-weight: 500; text-decoration: none; }
+    .profile-contact a {
+      color: var(--color-point);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .16s;
+      display: flex; align-items: center;
+    }
+    .profile-contact a:focus, .profile-contact a:hover { color: #2361b3; text-decoration: underline;}
     .profile-contact i { margin-right: 4px; }
     .skills-card, .section-card {
       background: var(--color-card);
       border-radius: var(--radius-card);
       box-shadow: var(--shadow2);
-      padding: 26px 32px 18px 32px;
-      margin-bottom: 26px;
+      padding: 30px 36px 22px 36px;
+      margin-bottom: 29px;
       transition: background .28s;
+      position: relative;
     }
     .section-title {
-      font-size: 1.19em; font-weight: 700;
-      margin-bottom: 18px;
+      font-size: 1.21em; font-weight: 700;
+      margin-bottom: 19px;
       color: var(--color-main);
       display: flex; align-items: center; gap: 8px;
       letter-spacing: -0.01em;
+      line-height: 1.13;
     }
     .skill-badges {
-      display: flex; flex-wrap: wrap; gap: 10px 14px; margin-bottom: 7px;
+      display: flex; flex-wrap: wrap; gap: 12px 16px; margin-bottom: 9px;
     }
     .skill-badge {
-      background: var(--color-skill); color: #296fc9;
-      border-radius: 8px; padding: 6px 15px;
-      font-size: 1.02em; font-weight: 600;
-      box-shadow: 0 1px 7px #d0eaff45;
-      transition: background 0.18s;
+      background: linear-gradient(92deg, #eaf3ff 90%, #f1f7fa 100%);
+      color: #296fc9;
+      border-radius: 9px; padding: 7px 17px;
+      font-size: 1.07em; font-weight: 600;
+      box-shadow: 0 1px 8px #d0eaff40;
+      transition: background 0.18s, color .16s;
+      border: 1.2px solid #e3eefd;
+      outline: none;
     }
-    .section-content { font-size: 1.03em; color: var(--color-txt2);}
+    .skill-badge:hover, .skill-badge:focus {
+      background: #e7f4ff; color: #1369e7; box-shadow: var(--shadow-neon);
+    }
+    .section-content { font-size: 1.08em; color: var(--color-txt2);}
     .projects-timeline { margin: 0; padding: 0;}
     .project-item {
-      margin-bottom: 23px;
-      padding-left: 12px;
-      border-left: 3px solid var(--color-main);
+      margin-bottom: 26px;
+      padding-left: 15px;
+      border-left: 3.5px solid var(--color-main);
       position: relative;
     }
     .project-date {
-      font-size: 0.97em; color: #86a2c8; margin-bottom: 2px;
+      font-size: 0.98em; color: #82a2be; margin-bottom: 2px;
     }
     .project-title {
-      font-weight: 700; font-size: 1.08em; color: #225bb8; margin-bottom: 2px;
-      display: flex; align-items: center; gap: 7px;
+      font-weight: 700; font-size: 1.13em; color: #225bb8; margin-bottom: 3px;
+      display: flex; align-items: center; gap: 8px;
     }
     .project-desc {
-      font-size: 1.01em; color: #3b4454; margin-bottom: 2.5px;
-      line-height: 1.5;
+      font-size: 1.04em; color: #3b4454; margin-bottom: 2.5px;
+      line-height: 1.6;
     }
-    .project-skills { margin-bottom: 2px; display: flex; gap: 6px; }
+    .project-skills { margin-bottom: 2px; display: flex; gap: 7px; }
     .project-code {
       background: #f6faff; color: #225bb8; font-family: 'Fira Mono',monospace;
-      border-radius: 5px; font-size: 0.97em; padding: 2.5px 9px;
+      border-radius: 5px; font-size: 0.99em; padding: 3.5px 10px;
       margin-bottom: 1.5px; display: inline-block;
     }
     .info-table {
       width: 100%; border-collapse: collapse; margin-bottom: 10px;
-      background: #f9fafb; font-size: 1.01em;
+      background: #f9fafb; font-size: 1.05em;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 12px;
     }
     .info-table th, .info-table td {
-      text-align: left; padding: 8.5px 8px; border-bottom: 1px solid #e8eefa;
+      text-align: left; padding: 10px 10px; border-bottom: 1px solid #e8eefa;
+      background: none;
     }
     .info-table th { color: #569df5; font-weight: 600; background: #f4f8ff;}
-    .lang-badges { display: flex; gap: 9px; margin-top: 2px;}
-    .lang-badge { background: #e3ecfa; color: #225bb8; padding: 3px 13px; border-radius: 9px; font-size: 0.98em;}
+    .lang-badges { display: flex; gap: 13px; margin-top: 5px;}
+    .lang-badge {
+      background: #e3ecfa; color: #225bb8;
+      padding: 4.5px 16px; border-radius: 11px; font-size: 1.01em;
+      font-weight: 600; border: 1.2px solid #e6f0fc;
+      transition: background 0.16s;
+    }
+    .lang-badge:hover, .lang-badge:focus { background: #dbefff;}
     /* 다운로드/테마 토글 */
     .resume-toolbar {
-      display: flex; gap: 9px; justify-content: flex-end;
-      margin-bottom: -28px; margin-top: 4px;
+      display: flex; gap: 11px; justify-content: flex-end;
+      margin-bottom: -31px; margin-top: 7px;
     }
     .toolbar-btn {
       background: var(--color-main); color: #fff;
-      border: none; border-radius: 19px;
-      padding: 8px 21px;
-      font-size: 1em; font-weight: 600;
-      box-shadow: 0 2px 8px #aedbfd36;
-      cursor: pointer; transition: background 0.15s;
+      border: none; border-radius: 21px;
+      padding: 11px 28px;
+      font-size: 1.06em; font-weight: 700;
+      box-shadow: 0 2px 11px #aedbfd36;
+      cursor: pointer; transition: background 0.15s, color 0.16s;
       outline: none;
-      display: flex; align-items: center; gap: 6px;
+      display: flex; align-items: center; gap: 9px;
+      letter-spacing: -0.7px;
     }
-    .toolbar-btn:active { background: #2357a6;}
+    .toolbar-btn:active { background: #195cbb;}
     .toolbar-btn.theme {
-      background: #dbefff; color: var(--color-main); border: 1px solid #8ecbfa;
-      font-weight: 700;
+      background: #e7f4ff; color: #1c70c9; border: 1.4px solid #8ecbfa;
     }
     .toolbar-btn.theme.dark {
-      background: #2a2f3a; color: #fff04a; border: 1px solid #5b5d68;
+      background: #232c3c; color: #fff04a; border: 1.4px solid #4e5b6a;
     }
     /* 다크모드 */
     body.dark {
-      background: #23272f; color: #f4f4f4;
+      background: #21222a; color: #f4f4f4;
     }
     body.dark .profile-card, body.dark .skills-card, body.dark .section-card {
-      background: #23232a;
+      background: #24273a;
       color: #f4f4f4;
+      box-shadow: 0 2px 28px #10243a4f;
     }
-    body.dark .section-title { color: var(--color-main-dark); }
-    body.dark .skill-badge, body.dark .lang-badge { background: #333c55; color: #e6f0ff;}
-    body.dark .info-table { background: #222334; color: #f4f4f4;}
-    body.dark .info-table th { background: #292a33; color: #fff04a;}
-    body.dark .project-code { background: #282a36; color: #fff04a;}
+    body.dark .profile-img-wrap { background: #222538; border-color: #292b34;}
+    body.dark .section-title { color: var(--color-main-soft); }
+    body.dark .skill-badge, body.dark .lang-badge {
+      background: #293250; color: #d7f0ff; border: 1.2px solid #293650;
+    }
+    body.dark .info-table { background: #262c38; color: #f4f4f4;}
+    body.dark .info-table th { background: #29304a; color: #fff04a;}
+    body.dark .project-code { background: #1b202a; color: #fff04a;}
     /* 반응형 */
-    @media (max-width: 700px) {
-      .resume-main { padding: 0 2vw;}
-      .profile-card, .skills-card, .section-card { padding: 21px 5vw 13px 5vw;}
+    @media (max-width: 850px) {
+      .resume-main { max-width: 99vw; }
+      .profile-maininfo { padding: 33px 15px 27px 15px;}
+      .profile-card { min-height: 150px;}
     }
-    @media (max-width: 540px) {
-      .profile-card { flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px 2vw 14px 2vw;}
-      .profile-img { width: 86px; height: 86px;}
-      .resume-main { margin: 10px auto;}
+    @media (max-width: 650px) {
+      .profile-card { flex-direction: column; align-items: stretch; min-height: unset;}
+      .profile-img-wrap { max-width: none; min-width: unset; border-right: none; justify-content: flex-start;}
+      .profile-maininfo { padding: 26px 12px 20px 12px;}
+    }
+    @media (max-width: 480px) {
+      .resume-main { margin: 8px auto;}
+      .skills-card, .section-card { padding: 18px 2vw 14px 2vw;}
+      .profile-img { width: 84px; height: 84px;}
     }
     @media print {
       body { background: #fff; }
@@ -213,34 +275,34 @@ permalink: /resume/
       </button>
     </div>
     <!-- 프로필(상단) -->
-<!-- 프로필(상단) -->
-<section class="profile-card">
-  <img
-    src="/assets/img/converted_image.webp"
-    alt="Devchanny 프로필 이미지"
-    class="profile-img"
-    loading="eager"
-    width="120"
-    height="120"
-  />
-  <div class="profile-maininfo">
-    <div class="profile-name">
-      박찬희 <span class="tossface">💙</span>
-    </div>
-    <div class="profile-role">Backend · Fullstack Developer</div>
-    <div class="profile-summary">
-      실전 설계와 자동화, 문제해결에 강점.<br/>
-      설계/개발/배포/문서화 등 프로젝트의 <b>End-to-End</b> 경험 다수.<br/>
-      빠른 성장/적응, 팀워크·코드리뷰·아키텍처 문서화 모두 직접 리딩.
-    </div>
-    <div class="profile-contact" style="margin-top:13px;">
-      <a href="https://devchanny.github.io" target="_blank" aria-label="블로그"><i class="ri-global-line"></i>Blog</a>
-      <a href="https://github.com/DevchannyP" target="_blank" aria-label="깃허브"><i class="ri-github-fill"></i>GitHub</a>
-      <a href="mailto:devchanny@gmail.com" aria-label="이메일"><i class="ri-mail-line"></i>Email</a>
-    </div>
-  </div>
-</section>
-
+    <section class="profile-card">
+      <div class="profile-img-wrap">
+        <img
+          src="/assets/img/converted_image.webp"
+          alt="Devchanny 프로필 이미지"
+          class="profile-img"
+          loading="eager"
+          width="120"
+          height="120"
+        />
+      </div>
+      <div class="profile-maininfo">
+        <div class="profile-name">
+          박찬희 <span class="tossface" style="font-size:1.14em;">💙</span>
+        </div>
+        <div class="profile-role">Backend · Fullstack Developer</div>
+        <div class="profile-summary">
+          실전 설계와 자동화, 문제해결에 강점.<br/>
+          설계/개발/배포/문서화 등 프로젝트의 <b>End-to-End</b> 경험 다수.<br/>
+          빠른 성장/적응, 팀워크·코드리뷰·아키텍처 문서화 모두 직접 리딩.
+        </div>
+        <div class="profile-contact" style="margin-top:13px;">
+          <a href="https://devchanny.github.io" target="_blank" aria-label="블로그"><i class="ri-global-line"></i>Blog</a>
+          <a href="https://github.com/DevchannyP" target="_blank" aria-label="깃허브"><i class="ri-github-fill"></i>GitHub</a>
+          <a href="mailto:devchanny@gmail.com" aria-label="이메일"><i class="ri-mail-line"></i>Email</a>
+        </div>
+      </div>
+    </section>
     <!-- 스킬 -->
     <section class="skills-card">
       <div class="section-title"><i class="ri-sparkling-2-fill"></i> 기술 스택</div>
