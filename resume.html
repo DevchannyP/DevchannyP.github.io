@@ -9,7 +9,6 @@ permalink: /resume/
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Devchanny Resume | 토스 스타일 프리미엄</title>
   <meta name="description" content="박찬희 개발자 이력서 · 프리미엄 토스 감성, 모던/입체 디자인" />
-  <!-- OG 썸네일 (SEO/공유용) -->
   <meta property="og:image" content="https://devchanny.github.io/assets/img/converted_image.webp"/>
   <meta property="og:title" content="Devchanny Resume | 박찬희 개발자 포트폴리오"/>
   <meta property="og:description" content="토스 스타일 프리미엄, 실전 프로젝트 경험 중심 이력서"/>
@@ -323,11 +322,11 @@ permalink: /resume/
           박찬희 <span class="tossface" style="font-size:1.14em;">💙</span>
           <span class="profile-cert" title="실명·이메일 인증"><i class="ri-verified-badge-fill"></i>인증</span>
         </div>
-        <div class="profile-role">Backend · Fullstack Developer</div>
+        <div class="profile-role">Fullstack Developer (Java/Spring · Next.js/React)</div>
         <div class="profile-summary">
-          실전 설계와 자동화, 문제해결에 강점.<br/>
-          설계/개발/배포/문서화 등 프로젝트의 <b>End-to-End</b> 경험 다수.<br/>
-          빠른 성장/적응, 팀워크·코드리뷰·아키텍처 문서화 모두 직접 리딩.
+          도메인 기반 설계, 자동화, 그리고 실전 프로젝트 리딩에 강점.<br/>
+          <b>풀스택 E2E 구축/운영</b> 경험 다수.<br/>
+          팀/개인 프로젝트에서 <b>문제해결·아키텍처 설계·코드리뷰</b>를 직접 주도.
         </div>
         <div class="profile-contact" style="margin-top:13px;">
           <a href="https://devchanny.github.io" target="_blank" aria-label="블로그"><i class="ri-global-line"></i>Blog</a>
@@ -336,6 +335,7 @@ permalink: /resume/
         </div>
       </div>
     </section>
+
     <!-- 스킬 -->
     <section class="skills-card">
       <div class="section-title"><i class="ri-sparkling-2-fill"></i> 기술 스택</div>
@@ -346,77 +346,166 @@ permalink: /resume/
         <span class="skill-badge">React</span>
         <span class="skill-badge">TypeScript</span>
         <span class="skill-badge">MariaDB</span>
+        <span class="skill-badge">PostgreSQL</span>
         <span class="skill-badge">JPA</span>
-        <span class="skill-badge">AWS</span>
+        <span class="skill-badge">Redis</span>
         <span class="skill-badge">CI/CD</span>
         <span class="skill-badge">GitHub Actions</span>
         <span class="skill-badge">Docker</span>
+        <span class="skill-badge">Tailwind CSS</span>
       </div>
       <table class="info-table">
         <tr><th>분야</th><th>기술/툴</th><th>숙련도</th></tr>
-        <tr><td>Backend</td><td>Spring Boot, JPA, Node.js</td><td>★★★★☆</td></tr>
-        <tr><td>Frontend</td><td>React, Next.js, TypeScript</td><td>★★★★☆</td></tr>
+        <tr><td>Backend</td><td>Spring Boot, JPA, QueryDSL, Redis</td><td>★★★★☆</td></tr>
+        <tr><td>Frontend</td><td>Next.js, React, TypeScript</td><td>★★★★☆</td></tr>
         <tr><td>DB/Cache</td><td>MariaDB, PostgreSQL, Redis</td><td>★★★★☆</td></tr>
-        <tr><td>DevOps</td><td>Docker, AWS, Github Actions</td><td>★★★★☆</td></tr>
+        <tr><td>DevOps</td><td>Docker, AWS, GitHub Actions</td><td>★★★★☆</td></tr>
       </table>
     </section>
+
     <!-- 프로젝트/경력 -->
     <section class="section-card">
-      <div class="section-title"><i class="ri-medal-2-fill"></i> 주요 프로젝트/성과</div>
+      <div class="section-title"><i class="ri-medal-2-fill"></i> 주요 프로젝트</div>
       <div class="projects-timeline">
+        <!-- 지방청년 프로젝트 -->
         <div class="project-item">
-          <div class="project-date">2024.03 ~ 2025.07</div>
+          <div class="project-date">2025.06 ~ 2025.08</div>
           <div class="project-title">지방청년 플랫폼 <span class="tossface">🚀</span></div>
           <div class="project-skills">
             <span class="skill-badge">Spring Boot</span>
             <span class="skill-badge">Next.js</span>
-            <span class="skill-badge">MariaDB</span>
+            <span class="skill-badge">Redis</span>
+            <span class="skill-badge">Docker</span>
           </div>
           <div class="project-desc">
-            - Fullstack 설계/개발/인프라 자동화<br/>
-            - 사용자 인증, 정책추천, 마이페이지, 대시보드 등 주도 구현<br/>
-            - DevOps 환경 자동화, 정책 점수 집계/추천 알고리즘
+            - 정책·커뮤니티·지역정보 통합 풀스택 플랫폼 직접 설계/개발/배포<br>
+            - JWT+Redis 인증/보안, SSR+CSR 성능 최적화, Fullpage Dashboard, ARIA/WCAG 접근성<br>
+            - CI/CD + 코드리뷰 기반 실무 협업 환경 구현 (GitHub Actions)<br>
+            <b>Github:</b> <a href="https://github.com/DevchannyP/jibangyoung" target="_blank">jibangyoung</a>
           </div>
-          <span class="project-code">CREATE TABLE user_activity_event (...)</span>
+          <span class="project-code"># Modular Monolith · DDD · SSR/CSR · Activity Event</span>
         </div>
+        <!-- Modular Monolith Template -->
         <div class="project-item">
-          <div class="project-date">2023.08 ~ 현재</div>
-          <div class="project-title">Devfolio (OSS) <span class="tossface">📝</span></div>
-          <div class="project-desc">
-            - Notion 기반 이력서/블로그 자동 생성, Github Actions로 정적 배포<br/>
-            - 컴포넌트 기반 포트폴리오 템플릿 제공
+          <div class="project-date">2025.06</div>
+          <div class="project-title">Modular Monolith Fullstack Template <span class="tossface">🏗️</span></div>
+          <div class="project-skills">
+            <span class="skill-badge">Spring Boot</span>
+            <span class="skill-badge">Next.js</span>
+            <span class="skill-badge">CI/CD</span>
           </div>
-          <span class="project-code">git clone ...<br>npm run build</span>
+          <div class="project-desc">
+            - 도메인 기반 DDD 구조, MSA 전환 고려한 모노리식 템플릿<br>
+            - 도메인/폴더/네이밍 규칙 통일화로 실무 협업 최적화<br>
+            <b>Github:</b> <a href="https://github.com/DevchannyP/mono-modulith-project" target="_blank">mono-modulith-project</a>
+          </div>
+          <span class="project-code"># DDD · Monorepo · Gradle/Kotlin DSL</span>
+        </div>
+        <!-- Redis Crawler -->
+        <div class="project-item">
+          <div class="project-date">2025.05</div>
+          <div class="project-title">Redis Crawler (Reddit AI 영상 자동화) <span class="tossface">🤖</span></div>
+          <div class="project-desc">
+            - Reddit 인기 영상 → Whisper STT → Google TTS → FFmpeg 영상 자동 생성 시스템<br>
+            - Java/Python 기반 E2E 자동화 파이프라인, 자막·음성·편집 완전 자동<br>
+            <b>문서:</b> <a href="https://github.com/DevchannyP/redis-crawler" target="_blank">redis-crawler</a>
+          </div>
+          <span class="project-code"># STT · TTS · FFmpeg · Selenium</span>
+        </div>
+        <!-- GDA JSP Project -->
+        <div class="project-item">
+          <div class="project-date">2025.04 ~ 2025.05</div>
+          <div class="project-title">GDA JSP 교육 플랫폼 <span class="tossface">🎓</span></div>
+          <div class="project-desc">
+            - 팀 프로젝트 (3인): JSP 기반 강의·멘토링·수강/관리·프로젝트 매칭 서비스<br>
+            - ERD, UI, 요구정의서, 발표자료 등 산출물/설계 완비<br>
+            <b>시연 영상:</b> <a href="https://www.youtube.com/watch?v=dD76U35wdmM" target="_blank">YouTube</a>
+          </div>
+          <span class="project-code"># JSP · MVC · MySQL · 협업</span>
+        </div>
+        <!-- JS 타자게임 -->
+        <div class="project-item">
+          <div class="project-date">2025.03</div>
+          <div class="project-title">JavaScript 타자 연습 게임 <span class="tossface">⌨️</span></div>
+          <div class="project-desc">
+            - JS 코드·개념 타이핑, 효과음/애니메이션, 공부/게임 모드<br>
+            - Web Audio API, Vanilla JS 기반<br>
+            <b>Github:</b> <a href="https://github.com/DevchannyP/javascript-typing-master" target="_blank">javascript-typing-master</a>
+          </div>
+          <span class="project-code"># VanillaJS · Web Audio · 게임UI</span>
         </div>
       </div>
     </section>
+
     <!-- 경력 -->
     <section class="section-card">
-      <div class="section-title"><i class="ri-briefcase-5-fill"></i> 경력사항</div>
+      <div class="section-title"><i class="ri-briefcase-5-fill"></i> 경력/활동</div>
       <table class="info-table">
-        <tr><th>기간</th><th>소속/프로젝트</th><th>역할/성과</th></tr>
-        <tr><td>2022.03~2023.12</td><td>㈜굿코드랩</td><td>플랫폼/백엔드/DevOps 개발, R&D</td></tr>
-        <tr><td>2023.12~현재</td><td>프리랜서/협력</td><td>지방청년 프로젝트 등 Fullstack 리딩/설계</td></tr>
+        <tr><th>기간</th><th>소속/활동</th><th>주요 역할/성과</th></tr>
+        <tr><td>2022.08~2024.12</td><td>친절한박가네(쇼핑몰 대표)</td><td>상품기획·운영·자동화·데이터 분석</td></tr>
+        <tr><td>2019.04~2022.08</td><td>웹소설 작가 (문피아)</td><td>콘텐츠 설계·반응 분석·장기 프로젝트 경험</td></tr>
+        <tr><td>2016.03~2018.11</td><td>공군 기록병·공특기</td><td>정밀 기록·장비 운용·문서화</td></tr>
+        <tr><td>2015.03~2016.03</td><td>경기상업고 전산실</td><td>IT 장비 유지보수·사용자 지원</td></tr>
       </table>
     </section>
-    <!-- 자격/언어 -->
+
+    <!-- 스킬/역량 (포트폴리오 기반 표) -->
     <section class="section-card">
-      <div class="section-title"><i class="ri-certificate-fill"></i> 자격/언어</div>
+      <div class="section-title"><i class="ri-trophy-fill"></i> 핵심 스킬/실무 역량</div>
+      <div class="section-content">
+        <table class="info-table">
+          <tr><th>스킬</th><th>보유 경험(출처)</th><th>IT 실무 활용/어필</th></tr>
+          <tr><td>도메인 설계</td><td>지방청년·Monolith·GDA 등 실전 설계</td><td>DB/ERD 설계, DDD, MSA 전환 경험</td></tr>
+          <tr><td>문서화</td><td>군 기록, 프로젝트 요구정의서·API 명세</td><td>요구사항/운영 매뉴얼·API 문서 작성</td></tr>
+          <tr><td>자동화/DevOps</td><td>CI/CD, Docker, GitHub Actions</td><td>배포 자동화, 운영 효율 개선</td></tr>
+          <tr><td>UX/사용자 분석</td><td>쇼핑몰·커뮤니티·피드백 분석</td><td>UX 설계, 데이터 기반 개선</td></tr>
+          <tr><td>협업/리딩</td><td>팀 프로젝트, 코드리뷰, 문서 공유</td><td>Conventional Commit, PR 템플릿 리딩</td></tr>
+          <tr><td>지속력/자기주도</td><td>장기 연재/운영, 스타트업·1인 대표 경험</td><td>프로젝트 오너십, 문제해결력</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- 학력/교육 -->
+    <section class="section-card">
+      <div class="section-title"><i class="ri-graduation-cap-fill"></i> 학력/교육</div>
       <div class="section-content">
         <ul>
-          <li>정보처리기사 (2023)</li>
-          <li>SQLD (2024)</li>
-          <li>컴퓨터공학(학사) 졸업</li>
+          <li><b>국가평생교육진흥원(4년제, 컴퓨터공학)</b> <span style="color:#2ca3ff;">2022.01 ~ 2026.01 (졸업예정)</span></li>
+          <li><b>구디아카데미 K-Digital Training 풀스택 과정</b> <span style="color:#2ca3ff;">2025.02 ~ 2025.08 (수료예정)</span><br>
+            Java, Spring Boot, JPA, MySQL, 팀프로젝트/Swagger/AWS 배포 경험</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- 자격/언어 -->
+    <section class="section-card">
+      <div class="section-title"><i class="ri-certificate-fill"></i> 자격/어학</div>
+      <div class="section-content">
+        <table class="info-table">
+          <tr><th>자격명</th><th>합격일</th><th>발급기관</th></tr>
+          <tr><td>정보처리산업기사</td><td>2025.06</td><td>한국산업인력공단</td></tr>
+          <tr><td>SQLD</td><td>2025.06</td><td>한국데이터진흥원</td></tr>
+          <tr><td>소방안전관리자 1급</td><td>2019.01</td><td>한국소방안전협회</td></tr>
+          <tr><td>컴퓨터활용능력 2급</td><td>2018.06</td><td>대한상공회의소</td></tr>
+        </table>
         <div class="lang-badges" style="margin-top:8px;">
           <span class="lang-badge">한국어(Native)</span>
           <span class="lang-badge">영어(업무/문서)</span>
         </div>
       </div>
     </section>
+
+    <!-- 블로그/기타/참고 -->
+    <section class="section-card">
+      <div class="section-title"><i class="ri-global-fill"></i> 블로그/참고 링크</div>
+      <div class="section-content">
+        <a href="https://devchannyp-github-io.pages.dev/resume/" target="_blank" rel="noopener">👉 이력서/포트폴리오 바로가기</a> <br>
+        <a href="https://github.com/DevchannyP" target="_blank" rel="noopener">👉 GitHub 전체 프로젝트</a>
+      </div>
+    </section>
   </div>
   <script>
-    // 다크모드 토글 & localStorage 저장
+    // (다크모드 토글 스크립트는 기존 코드 그대로 사용)
     const themeBtn = document.getElementById('theme-toggle');
     function setDarkMode(dark) {
       document.body.classList.toggle('dark', dark);
@@ -426,7 +515,6 @@ permalink: /resume/
       themeBtn.classList.toggle('dark', dark);
       localStorage.setItem('resume-darkmode', dark ? '1' : '0');
     }
-    // 최초 설정
     (() => {
       const isDark = localStorage.getItem('resume-darkmode') === '1'
         || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
